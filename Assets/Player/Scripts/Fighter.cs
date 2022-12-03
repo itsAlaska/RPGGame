@@ -25,7 +25,17 @@ namespace RPG.Combat
             else
             {
                 GetComponent<Mover>().Cancel();
+                AttackBehavior();
+
+                // Adding this in, not part of the course
+                // Randomizes attack animation
+                // AttackAnimation();
             }
+        }
+
+        private void AttackBehavior()
+        {
+            GetComponent<Animator>().SetTrigger("attack1");
         }
 
         bool GetIsInRange()
@@ -36,6 +46,7 @@ namespace RPG.Combat
         public void Attack(CombatTarget combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
+
             target = combatTarget.transform;
         }
 
@@ -43,5 +54,25 @@ namespace RPG.Combat
         {
             target = null;
         }
+
+        // Animation event
+        void Hit() { }
+
+        // Adding this in, not part of the course
+        // Randomizes attack animation
+        // void AttackAnimation()
+        // {
+        //     int attackAnim = Random.Range(1, 3);
+        //     Animator animator = GetComponent<Animator>();
+        //     switch (attackAnim)
+        //     {
+        //         case 1:
+        //             animator.SetTrigger("attack1");
+        //             break;
+        //         case 2:
+        //             animator.SetTrigger("attack2");
+        //             break;
+        //     }
+        // }
     }
 }
