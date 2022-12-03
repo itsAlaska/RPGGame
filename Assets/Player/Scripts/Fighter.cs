@@ -11,10 +11,16 @@ namespace RPG.Combat
         [SerializeField]
         float weaponRange = 2f;
 
+        [SerializeField]
+        float timeBetweenAttacks = 1f;
+
         Transform target;
+        float timeSinceLastAttack = 0;
 
         void Update()
         {
+            timeSinceLastAttack += Time.deltaTime;
+
             if (target == null)
                 return;
 
@@ -25,17 +31,18 @@ namespace RPG.Combat
             else
             {
                 GetComponent<Mover>().Cancel();
-                AttackBehavior();
 
-                // Adding this in, not part of the course
-                // Randomizes attack animation
-                // AttackAnimation();
+                AttackBehavior();
             }
         }
 
         private void AttackBehavior()
         {
-            GetComponent<Animator>().SetTrigger("attack1");
+            if (timeBetweenAttacks <= timeSinceLastAttack)
+            {
+                GetComponent<Animator>().SetTrigger(RandomAttackAnim());
+                timeSinceLastAttack= 0;
+            }
         }
 
         bool GetIsInRange()
@@ -58,21 +65,17 @@ namespace RPG.Combat
         // Animation event
         void Hit() { }
 
-        // Adding this in, not part of the course
-        // Randomizes attack animation
-        // void AttackAnimation()
-        // {
-        //     int attackAnim = Random.Range(1, 3);
-        //     Animator animator = GetComponent<Animator>();
-        //     switch (attackAnim)
-        //     {
-        //         case 1:
-        //             animator.SetTrigger("attack1");
-        //             break;
-        //         case 2:
-        //             animator.SetTrigger("attack2");
-        //             break;
-        //     }
-        // }
+        string RandomAttackAnim()
+        {
+            int number = Random.Range(0, 2);
+            if (number == 0)
+            {
+                return "attack1";
+            }
+            else
+            {
+                return "attack2";
+            }
+        }
     }
 }
