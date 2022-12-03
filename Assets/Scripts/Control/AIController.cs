@@ -26,7 +26,7 @@ namespace RPG.Control
         {
             if (health.IsDead)
                 return;
-                
+
             if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
             {
                 fighter.Attack(player);
@@ -37,13 +37,20 @@ namespace RPG.Control
             }
         }
 
-        private bool InAttackRangeOfPlayer()
+        bool InAttackRangeOfPlayer()
         {
             float distanceToPlayer = Vector3.Distance(
                 transform.position,
                 player.transform.position
             );
             return distanceToPlayer < chaseDistance;
+        }
+
+        // Called by Unity
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position, chaseDistance);
         }
     }
 }
