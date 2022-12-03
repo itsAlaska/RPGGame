@@ -14,6 +14,9 @@ namespace RPG.Combat
         [SerializeField]
         float timeBetweenAttacks = 1f;
 
+        [SerializeField]
+        float weaponDamage = 5f;
+
         Transform target;
         float timeSinceLastAttack = 0;
 
@@ -40,9 +43,17 @@ namespace RPG.Combat
         {
             if (timeBetweenAttacks <= timeSinceLastAttack)
             {
+                // This will trigger the Hit() event.
                 GetComponent<Animator>().SetTrigger(RandomAttackAnim());
-                timeSinceLastAttack= 0;
+                timeSinceLastAttack = 0;
             }
+        } 
+        // Animation event
+
+        void Hit()
+        {
+            Health health = target.GetComponent<Health>();
+            health.TakeDamage(weaponDamage);
         }
 
         bool GetIsInRange()
@@ -62,9 +73,7 @@ namespace RPG.Combat
             target = null;
         }
 
-        // Animation event
-        void Hit() { }
-
+        // Custom method to go between two random attack animations
         string RandomAttackAnim()
         {
             int number = Random.Range(0, 2);
