@@ -45,15 +45,23 @@ namespace RPG.Combat
             if (timeBetweenAttacks <= timeSinceLastAttack)
             {
                 // This will trigger the Hit() event.
-                GetComponent<Animator>()
-                    .SetTrigger(RandomAttackAnim());
+                TriggerAttack();
                 timeSinceLastAttack = 0;
             }
+        }
+
+        void TriggerAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("stopAttack");
+            GetComponent<Animator>().SetTrigger(RandomAttackAnim());
         }
 
         // Animation event
         void Hit()
         {
+            if (target == null)
+                return;
+                
             target.TakeDamage(weaponDamage);
         }
 
@@ -80,8 +88,15 @@ namespace RPG.Combat
 
         public void Cancel()
         {
-            GetComponent<Animator>().SetTrigger("stopAttack");
+            TriggerStopAttack();
             target = null;
+        }
+
+        void TriggerStopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("attack1");
+            GetComponent<Animator>().ResetTrigger("attack2");
+            GetComponent<Animator>().SetTrigger("stopAttack");
         }
 
         // Custom method to go between two random attack animations
