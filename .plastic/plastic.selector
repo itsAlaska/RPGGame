@@ -1,0 +1,4 @@
+repository "RPGProjectAgain@itsAlaska@cloud"
+  path "/"
+    smartbranch "/main"            
+     
