@@ -1,4 +1,4 @@
 repository "RPGProjectAgain@itsAlaska@cloud"
   path "/"
-    smartbranch "/main/combat"             
+    smartbranch "/main/enemyai"                 
      
