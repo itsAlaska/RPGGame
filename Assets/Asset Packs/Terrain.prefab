@@ -1,0 +1,648 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &566988349053466796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721821847351604536}
+  - component: {fileID: 2841295164819380799}
+  - component: {fileID: 2331795316404447674}
+  - component: {fileID: 3961059102988746566}
+  m_Layer: 0
+  m_Name: Terrain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 0
+--- !u!4 &721821847351604536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566988349053466796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!218 &2841295164819380799
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566988349053466796}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: 3f0ee97eb03330947aecba11d4824a48, type: 2}
+  m_TreeDistance: 1000
+  m_TreeBillboardDistance: 300
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 200
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_StaticShadowCaster: 0
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_BakeLightProbesForTrees: 0
+  m_PreserveTreePrototypeLayers: 1
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.025
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+--- !u!154 &2331795316404447674
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566988349053466796}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: 3f0ee97eb03330947aecba11d4824a48, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!114 &3961059102988746566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566988349053466796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f710250abab6f24a954bdf3c3c1ac64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 60175
+  terrains:
+  - {fileID: 2841295164819380799}
+  treeTypes:
+  - enabled: 1
+    name: SM_POLYGON_Tree_02_Synty
+    seed: 44053
+    probability: 5
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 101
+    prefabs:
+    - index: 0
+      probability: 100
+      prefab: {fileID: 100000, guid: a5be0d1c8e89d6345bb1321ca2680dab, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_Env_Tree_03
+    seed: 86365
+    probability: 20
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 394
+    prefabs:
+    - index: 1
+      probability: 100
+      prefab: {fileID: 190414, guid: 653c97bd88b4b084d87714542c43ee5a, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_Env_Tree_010
+    seed: 77370
+    probability: 15
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 312
+    prefabs:
+    - index: 2
+      probability: 100
+      prefab: {fileID: 135026, guid: d556d30cab334dd449000218c87322ef, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_POLYGON_Tree_01_Synty
+    seed: 79119
+    probability: 10
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 209
+    prefabs:
+    - index: 3
+      probability: 100
+      prefab: {fileID: 100000, guid: fff67120f6ab6d54ea298190b3542ccc, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_Env_Bush_01
+    seed: 13806
+    probability: 5
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 112
+    prefabs:
+    - index: 4
+      probability: 100
+      prefab: {fileID: 122670, guid: f7e91e1d54c5ad64f8125310343f0d30, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_Env_Grass_01
+    seed: 65092
+    probability: 20
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.63
+    instanceCount: 220
+    prefabs:
+    - index: 5
+      probability: 100
+      prefab: {fileID: 107084, guid: 9ad607532c614c54ebd43e913aaf8857, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_Env_Grass_Large_01
+    seed: 19954
+    probability: 15
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 310
+    prefabs:
+    - index: 6
+      probability: 100
+      prefab: {fileID: 131018, guid: dce1a891bc9f6744f8c11b28a4bf775d, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_POLYGON_Bush_01_Synty
+    seed: 21502
+    probability: 5
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 110
+    prefabs:
+    - index: 7
+      probability: 100
+      prefab: {fileID: 100000, guid: e1e0b419a219d4c4f885310f0f6c73fa, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_Env_TreeLog_01
+    seed: 62192
+    probability: 1
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 25
+    prefabs:
+    - index: 8
+      probability: 100
+      prefab: {fileID: 114594, guid: e0bcb36554be1124b8a89d63037350be, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_POLYGON_Flower_01_Synty
+    seed: 65092
+    probability: 12
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 241
+    prefabs:
+    - index: 9
+      probability: 100
+      prefab: {fileID: 100000, guid: 7c89b7c8bf9ce7c47a08844eca6c0a29, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_POLYGON_Rocks_01_Synty
+    seed: 19954
+    probability: 1
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_0
+      layerID: 0
+      threshold: 0
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0
+    - name: Gaia_-20221203-205401_2
+      layerID: 2
+      threshold: 0
+    - name: Gaia_-20221203-205401_3
+      layerID: 3
+      threshold: 0.6
+    instanceCount: 243
+    prefabs:
+    - index: 10
+      probability: 100
+      prefab: {fileID: 100000, guid: 008b1e650492c9c45aecf0bfffcf7fcb, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_POLYGON_Rock_02_Synty
+    seed: 9505
+    probability: 1
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_0
+      layerID: 0
+      threshold: 0
+    - name: Gaia_-20221203-205401_2
+      layerID: 2
+      threshold: 0
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0
+    - name: Gaia_-20221203-205401_3
+      layerID: 3
+      threshold: 0.6
+    instanceCount: 223
+    prefabs:
+    - index: 11
+      probability: 100
+      prefab: {fileID: 100000, guid: 68aa507c42aa78347bffffe45a640543, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: SM_POLYGON_Rock_01_Synty
+    seed: 84477
+    probability: 1
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_3
+      layerID: 3
+      threshold: 0
+    - name: Gaia_-20221203-205401_2
+      layerID: 2
+      threshold: 0
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0
+    - name: Gaia_-20221203-205401_0
+      layerID: 0
+      threshold: 0.6
+    instanceCount: 270
+    prefabs:
+    - index: 12
+      probability: 100
+      prefab: {fileID: 100000, guid: 26e172513b362cc42b8bc9221d77ac12, type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  grassPrefabs:
+  - enabled: 1
+    name: SM_Env_Grass_Large_01
+    seed: 23692
+    probability: 100
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 2}
+    slopeRange: {x: 0, y: 90}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0
+    instanceCount: 279
+    index: 0
+    type: 0
+    renderAsBillboard: 0
+    prefab: {fileID: 131018, guid: dce1a891bc9f6744f8c11b28a4bf775d, type: 3}
+    gpuInstancing: 1
+    billboard: {fileID: 0}
+    mainColor: {r: 0.2627451, g: 0.9764706, b: 0.16470589, a: 1}
+    secondaryColor: {r: 0.8039216, g: 0.7372549, b: 0.101960786, a: 1}
+    linkColors: 1
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 1, y: 2}
+    noiseSize: 0.1
+  - enabled: 1
+    name: SM_Env_Bush_01
+    seed: 555197718
+    probability: 25
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 2}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 0
+    index: 1
+    type: 0
+    renderAsBillboard: 0
+    prefab: {fileID: 122670, guid: f7e91e1d54c5ad64f8125310343f0d30, type: 3}
+    gpuInstancing: 1
+    billboard: {fileID: 0}
+    mainColor: {r: 0.2627451, g: 0.9764706, b: 0.16470589, a: 1}
+    secondaryColor: {r: 0.8039216, g: 0.7372549, b: 0.101960786, a: 1}
+    linkColors: 1
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 1, y: 2}
+    noiseSize: 0.1
+  - enabled: 1
+    name: SM_POLYGON_Bush_01_Synty
+    seed: 121443569
+    probability: 25
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 2}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 0
+    index: 2
+    type: 0
+    renderAsBillboard: 0
+    prefab: {fileID: 100000, guid: e1e0b419a219d4c4f885310f0f6c73fa, type: 3}
+    gpuInstancing: 1
+    billboard: {fileID: 0}
+    mainColor: {r: 0.2627451, g: 0.9764706, b: 0.16470589, a: 1}
+    secondaryColor: {r: 0.8039216, g: 0.7372549, b: 0.101960786, a: 1}
+    linkColors: 1
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 1, y: 2}
+    noiseSize: 0.1
+  - enabled: 1
+    name: SM_Env_Grass_01
+    seed: 1982113952
+    probability: 25
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 2}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 0
+    index: 3
+    type: 0
+    renderAsBillboard: 0
+    prefab: {fileID: 107084, guid: 9ad607532c614c54ebd43e913aaf8857, type: 3}
+    gpuInstancing: 1
+    billboard: {fileID: 0}
+    mainColor: {r: 0.2627451, g: 0.9764706, b: 0.16470589, a: 1}
+    secondaryColor: {r: 0.8039216, g: 0.7372549, b: 0.101960786, a: 1}
+    linkColors: 1
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 1, y: 2}
+    noiseSize: 0.1
+  - enabled: 1
+    name: SM_POLYGON_Flower_01_Synty
+    seed: 1098298339
+    probability: 25
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 2}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 0
+    index: 4
+    type: 0
+    renderAsBillboard: 0
+    prefab: {fileID: 100000, guid: 7c89b7c8bf9ce7c47a08844eca6c0a29, type: 3}
+    gpuInstancing: 1
+    billboard: {fileID: 0}
+    mainColor: {r: 0.2627451, g: 0.9764706, b: 0.16470589, a: 1}
+    secondaryColor: {r: 0.8039216, g: 0.7372549, b: 0.101960786, a: 1}
+    linkColors: 1
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 1, y: 2}
+    noiseSize: 0.1
+  - enabled: 1
+    name: SM_POLYGON_Rocks_01_Synty
+    seed: 1574275543
+    probability: 25
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 2}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_0
+      layerID: 0
+      threshold: 0.6
+    - name: Gaia_-20221203-205401_2
+      layerID: 2
+      threshold: 0.6
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    - name: Gaia_-20221203-205401_3
+      layerID: 3
+      threshold: 0.6
+    instanceCount: 62
+    index: 5
+    type: 0
+    renderAsBillboard: 0
+    prefab: {fileID: 100000, guid: 008b1e650492c9c45aecf0bfffcf7fcb, type: 3}
+    gpuInstancing: 1
+    billboard: {fileID: 0}
+    mainColor: {r: 0.2627451, g: 0.9764706, b: 0.16470589, a: 1}
+    secondaryColor: {r: 0.8039216, g: 0.7372549, b: 0.101960786, a: 1}
+    linkColors: 1
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 1, y: 2}
+    noiseSize: 0.1
+  - enabled: 1
+    name: SM_POLYGON_Rock_01_Synty
+    seed: 840985831
+    probability: 25
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 2}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: Gaia_-20221203-205401_2
+      layerID: 2
+      threshold: 0.6
+    - name: Gaia_-20221203-205401_3
+      layerID: 3
+      threshold: 0.6
+    - name: Gaia_-20221203-205401_0
+      layerID: 0
+      threshold: 0.6
+    - name: Gaia_-20221203-205401_1
+      layerID: 1
+      threshold: 0.6
+    instanceCount: 68
+    index: 6
+    type: 0
+    renderAsBillboard: 0
+    prefab: {fileID: 100000, guid: 26e172513b362cc42b8bc9221d77ac12, type: 3}
+    gpuInstancing: 1
+    billboard: {fileID: 0}
+    mainColor: {r: 0.2627451, g: 0.9764706, b: 0.16470589, a: 1}
+    secondaryColor: {r: 0.8039216, g: 0.7372549, b: 0.101960786, a: 1}
+    linkColors: 1
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 1, y: 2}
+    noiseSize: 0.1
+  - enabled: 1
+    name: SM_POLYGON_Rock_02_Synty
+    seed: 9996
+    probability: 25
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks: []
+    instanceCount: 0
+    index: 7
+    type: 0
+    renderAsBillboard: 0
+    prefab: {fileID: 100000, guid: 68aa507c42aa78347bffffe45a640543, type: 3}
+    gpuInstancing: 1
+    billboard: {fileID: 0}
+    mainColor: {r: 1, g: 1, b: 1, a: 1}
+    secondaryColor: {r: 1, g: 1, b: 1, a: 1}
+    linkColors: 1
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 0.8, y: 1.2}
+    noiseSize: 0.1
+  terrainSettings:
+    drawTreesAndFoliage: 1
+    perservePrefabLayer: 1
+    treeLightProbes: 0
+    treeDistance: 1000
+    billboardStart: 300
+    maxMeshTrees: 50
+    grassDistance: 200
+    grassDensity: 1
+    windStrength: 0.15
+    windSpeed: 1
+    windFrequency: 2
+    wintTint: {r: 1, g: 1, b: 1, a: 1}
+  cellSize: 64
+  cellDivisions: 4
+  highPrecisionCollision: 1
+  collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  terrainMinMaxHeight: {x: 0, y: 154.7907}
+  detailResolution: 512
+  detailResolutionIndex: 2
+  grassPatchSize: 128
+  grassPatchSizeIndex: 4
+  tempColliders: []
+  waterHeight: 0
+  autoRespawnTrees: 1

@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TryingStuffOut.unity
+    guid: a3bf068f5d178b64ebed52dc53fc9325
   m_configObjects: {}

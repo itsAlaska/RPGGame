@@ -25,6 +25,10 @@ namespace RPG.Control
         [SerializeField]
         float waypointTolerance = 1f;
 
+        [SerializeField]
+        [Range(0, 1)]
+        float patrolSpeedFraction = .2f;
+
         Fighter fighter;
         Health health;
         Mover mover;
@@ -88,7 +92,7 @@ namespace RPG.Control
 
             if (timeSinceArrivedAtWaypoint > waypointDwellTime)
             {
-                mover.StartMoveAction(nextPosition);
+                mover.StartMoveAction(nextPosition, patrolSpeedFraction);
             }
         }
 
@@ -115,6 +119,8 @@ namespace RPG.Control
 
         void AttackBehaviour()
         {
+            // probably adjust the move speed here
+            // just have two variables one for patrol speed one for chase speed
             timeSinceLastSawPlayer = 0;
             fighter.Attack(player);
         }
