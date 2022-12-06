@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saving
       objectReference: {fileID: 0}
+    - target: {fileID: 6572038050566566486, guid: 262f1776221616448aac5ac7993874af, type: 3}
+      propertyPath: fadeInTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9050022729112132645, guid: 262f1776221616448aac5ac7993874af, type: 3}
       propertyPath: m_RootOrder
       value: 1
