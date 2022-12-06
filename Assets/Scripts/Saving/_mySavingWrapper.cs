@@ -6,7 +6,7 @@ namespace RPG.Saving
 {
     public class _mySavingWrapper : MonoBehaviour
     {
-        const string defaultSaveFile = "save";
+        const string defaultSaveFile = "_mySave";
 
         void Update()
         {
