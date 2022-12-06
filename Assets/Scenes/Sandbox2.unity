@@ -293,6 +293,26 @@ PrefabInstance:
       propertyPath: sceneToLoad
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3722436627365048711, guid: cb54c19b009356145824d586ec6f634b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.018182572
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722436627365048711, guid: cb54c19b009356145824d586ec6f634b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722436627365048711, guid: cb54c19b009356145824d586ec6f634b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9998347
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722436627365048711, guid: cb54c19b009356145824d586ec6f634b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722436627365048711, guid: cb54c19b009356145824d586ec6f634b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 182.084
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb54c19b009356145824d586ec6f634b, type: 3}
 --- !u!1001 &1828035489
