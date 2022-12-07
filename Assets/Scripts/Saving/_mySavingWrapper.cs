@@ -8,16 +8,31 @@ namespace RPG.Saving
     {
         const string defaultSaveFile = "_mySave";
 
+        void Start()
+        {
+            Load();
+        }
+
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.S))
             {
-                GetComponent<_mySavingSystem>().Save(defaultSaveFile);
+                Save();
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
-                GetComponent<_mySavingSystem>().Load(defaultSaveFile);
+                Load();
             }
+        }
+
+        public void Load()
+        {
+            GetComponent<_mySavingSystem>().Load(defaultSaveFile);
+        }
+
+        public void Save()
+        {
+            GetComponent<_mySavingSystem>().Save(defaultSaveFile);
         }
     }
 }

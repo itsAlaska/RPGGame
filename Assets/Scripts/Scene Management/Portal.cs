@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Saving;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -55,11 +56,12 @@ namespace RPG.SceneManagement
             DontDestroyOnLoad(gameObject);
 
             Fader fader = FindObjectOfType<Fader>();
+            _mySavingWrapper wrapper = FindObjectOfType<_mySavingWrapper>();
 
             yield return fader.FadeOut(fadeOutTime);
 
             // Save current level
-            SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
+
             wrapper.Save();
 
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
@@ -71,7 +73,7 @@ namespace RPG.SceneManagement
             UpdatePlayer(otherPortal);
 
             wrapper.Save();
-            
+
             yield return new WaitForSeconds(fadeWaitTime);
             yield return fader.FadeIn(fadeInTime);
 
