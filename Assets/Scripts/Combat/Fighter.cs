@@ -71,7 +71,19 @@ namespace RPG.Combat
             if (target == null)
                 return;
 
-            target.TakeDamage(currentWeapon.GetDamage);
+            if (currentWeapon.HasProjectile())
+            {
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
+            }
+            else
+            {
+                target.TakeDamage(currentWeapon.GetDamage);
+            }
+        }
+
+        void Shoot()
+        {
+            Hit();
         }
 
         bool GetIsInRange()
@@ -121,11 +133,6 @@ namespace RPG.Combat
             {
                 return "attack2";
             }
-        }
-
-        internal bool CanAttack(CombatTarget target)
-        {
-            throw new System.NotImplementedException();
         }
 
         public void EquipWeapon(Weapon weapon)
