@@ -5,7 +5,7 @@ using RPG.Saving;
 
 namespace RPG.Core
 {
-    public class Health : MonoBehaviour, ISaveable
+    public class Health : MonoBehaviour
     {
         [SerializeField]
         float healthPoints = 100f;

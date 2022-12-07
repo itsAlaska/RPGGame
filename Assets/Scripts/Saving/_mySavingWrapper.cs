@@ -10,11 +10,11 @@ namespace RPG.Saving
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.S))
             {
                 GetComponent<_mySavingSystem>().Save(defaultSaveFile);
             }
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 GetComponent<_mySavingSystem>().Load(defaultSaveFile);
             }
