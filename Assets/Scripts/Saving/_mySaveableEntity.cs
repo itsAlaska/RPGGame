@@ -73,7 +73,7 @@ namespace RPG.Saving
 
         bool IsUnique(string candidate)
         {
-            if (globalLookup.ContainsKey(candidate))
+            if (!globalLookup.ContainsKey(candidate))
                 return true;
 
             if (globalLookup[candidate] == this)
