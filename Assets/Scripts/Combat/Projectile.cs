@@ -12,6 +12,7 @@ namespace RPG.Combat
         float speed = 1;
 
         Health target = null;
+        float damage = 0;
 
         void Update()
         {
@@ -22,9 +23,21 @@ namespace RPG.Combat
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
-        public void SetTarget(Health target)
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.GetComponent<Health>() != target)
+                return;
+
+            target.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+
+        public void SetTarget(Health target, float damage)
         {
             this.target = target;
+            this.damage = damage;
+
+            print($"{target.name} is being targeted");
         }
 
         Vector3 GetAimLocation()

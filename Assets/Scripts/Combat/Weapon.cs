@@ -61,7 +61,7 @@ namespace RPG.Combat
                 Quaternion.identity
             );
 
-            projectileInstance.SetTarget(target);
+            projectileInstance.SetTarget(target, weaponDamage);
         }
 
         public float GetDamage
