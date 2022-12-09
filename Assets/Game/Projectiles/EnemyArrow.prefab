@@ -9811,6 +9811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyArrow
       objectReference: {fileID: 0}
+    - target: {fileID: 6334287375711592903, guid: 2113c1f8e7b496e4183378e55088ed77, type: 3}
+      propertyPath: isHoming
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8309434507917638672, guid: 2113c1f8e7b496e4183378e55088ed77, type: 3}
       propertyPath: m_RootOrder
       value: 0
