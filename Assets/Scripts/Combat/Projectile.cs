@@ -14,6 +14,9 @@ namespace RPG.Combat
         [SerializeField]
         bool isHoming = true;
 
+        [SerializeField]
+        GameObject hitEffect = null;
+
         Health target = null;
         float damage = 0;
 
@@ -44,6 +47,8 @@ namespace RPG.Combat
             }
 
             target.TakeDamage(damage);
+            GameObject hit = Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+            hit.transform.LookAt(GameObject.FindWithTag("Player").transform.position);
             Destroy(gameObject);
         }
 
