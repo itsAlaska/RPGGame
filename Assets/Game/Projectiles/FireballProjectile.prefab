@@ -49,6 +49,9 @@ MonoBehaviour:
   speed: 10
   isHoming: 1
   hitEffect: {fileID: 1725273190611177636, guid: df0099c176a05a5478ef920265673d01, type: 3}
+  maxLifeTime: 10
+  destroyOnHit: []
+  lifeAfterImpact: 0
 --- !u!65 &2541174274395588096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -164,6 +167,14 @@ PrefabInstance:
     - target: {fileID: 7200004032907637229, guid: 1ead6e6610032604cbffdf8bed912be5, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770806431137303632, guid: 1ead6e6610032604cbffdf8bed912be5, type: 3}
+      propertyPath: m_Name
+      value: SolidCore
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006539016321148247, guid: 1ead6e6610032604cbffdf8bed912be5, type: 3}
+      propertyPath: m_Name
+      value: SpinCore
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ead6e6610032604cbffdf8bed912be5, type: 3}

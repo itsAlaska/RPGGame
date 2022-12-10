@@ -17,6 +17,15 @@ namespace RPG.Combat
         [SerializeField]
         GameObject hitEffect = null;
 
+        [SerializeField]
+        float maxLifeTime = 10f;
+
+        [SerializeField]
+        GameObject[] destroyOnHit = null;
+
+        [SerializeField]
+        float lifeAfterImpact = 2f;
+
         Health target = null;
         float damage = 0;
 
@@ -47,9 +56,15 @@ namespace RPG.Combat
             }
 
             target.TakeDamage(damage);
+            speed = 0;
             GameObject hit = Instantiate(hitEffect, GetAimLocation(), transform.rotation);
             hit.transform.LookAt(GameObject.FindWithTag("Player").transform.position);
-            Destroy(gameObject);
+
+            foreach (GameObject toDestroy in destroyOnHit)
+            {
+                Destroy(toDestroy);
+            }
+            Destroy(gameObject, lifeAfterImpact);
         }
 
         public void SetTarget(Health target, float damage)
@@ -57,7 +72,7 @@ namespace RPG.Combat
             this.target = target;
             this.damage = damage;
 
-            print($"{target.name} is being targeted");
+            Destroy(gameObject, maxLifeTime);
         }
 
         Vector3 GetAimLocation()
