@@ -11,7 +11,6 @@ namespace RPG.Combat
         void Awake()
         {
             fighter = GameObject.FindWithTag("Player").GetComponent<Fighter>();
-
         }
 
         void Update()
@@ -23,7 +22,8 @@ namespace RPG.Combat
             }
 
             Health health = fighter.GetTarget();
-            GetComponent<TMP_Text>().text = $"{health.GetPercentage()}%";
+            GetComponent<TMP_Text>().text =
+                $"{health.GetHealthPoints()} / {health.GetMaxHitPoints()}";
         }
     }
 }

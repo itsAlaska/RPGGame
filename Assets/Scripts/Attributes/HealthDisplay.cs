@@ -10,13 +10,12 @@ namespace RPG.Attributes
         void Awake()
         {
             health = GameObject.FindWithTag("Player").GetComponent<Health>();
-
         }
 
         void Update()
         {
-            GetComponent<TMP_Text>().text = $"{health.GetPercentage()}%";
+            GetComponent<TMP_Text>().text =
+                $"{health.GetHealthPoints()} / {health.GetMaxHitPoints()}";
         }
     }
 }
-
