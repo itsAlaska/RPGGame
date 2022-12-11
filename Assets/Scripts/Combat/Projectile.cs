@@ -24,6 +24,7 @@ namespace RPG.Combat
         float lifeAfterImpact = 2f;
 
         Health target = null;
+        GameObject instigator = null;
         float damage = 0;
 
         void Start()
@@ -53,7 +54,7 @@ namespace RPG.Combat
                 return;
             }
 
-            target.TakeDamage(damage);
+            target.TakeDamage(instigator, damage);
             speed = 0;
             GameObject hit = Instantiate(hitEffect, GetAimLocation(), transform.rotation);
             hit.transform.LookAt(GameObject.FindWithTag("Player").transform.position);
@@ -65,10 +66,11 @@ namespace RPG.Combat
             Destroy(gameObject, lifeAfterImpact);
         }
 
-        public void SetTarget(Health target, float damage)
+        public void SetTarget(Health target, GameObject instigator, float damage)
         {
             this.target = target;
             this.damage = damage;
+            this.instigator = instigator;
 
             Destroy(gameObject, maxLifeTime);
         }
