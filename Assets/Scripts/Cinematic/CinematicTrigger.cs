@@ -21,6 +21,7 @@ namespace RPG.Cinematics
 
         public object CaptureState()
         {
+            print($"alreadyTriggere = {alreadyTriggered}");
             return alreadyTriggered;
         }
 
