@@ -6,7 +6,8 @@ namespace RPG.Stats
     [CreateAssetMenu(fileName = "Progression", menuName = "Stats/New Progression", order = 0)]
     public class Progression : ScriptableObject
     {
-        [SerializeField] ProgressionCharacterClass[] characterClasses = null;
+        [SerializeField]
+        ProgressionCharacterClass[] characterClasses = null;
 
         public float GetHealth(CharacterClass characterClass, int level)
         {
@@ -14,7 +15,7 @@ namespace RPG.Stats
             {
                 if (progressionClass.characterClass == characterClass)
                 {
-                    return progressionClass.health[level - 1];
+                    // return progressionClass.health[level - 1];
                 }
             }
             return 0;
@@ -24,8 +25,15 @@ namespace RPG.Stats
         class ProgressionCharacterClass
         {
             public CharacterClass characterClass;
-            public float[] health;
+            public ProgressionStat[] stats;
+            // public float[] health;
+        }
+
+        [System.Serializable]
+        class ProgressionStat
+        {
+            public Stat stats;
+            public float[] levels;
         }
     }
 }
-
