@@ -31,6 +31,7 @@ namespace RPG.Combat
 
         void Start()
         {
+            if (target == null) return;
             transform.LookAt(GetAimLocation());
         }
 
@@ -77,6 +78,7 @@ namespace RPG.Combat
 
         Vector3 GetAimLocation()
         {
+
             CapsuleCollider targetCapsule = target.GetComponent<CapsuleCollider>();
 
             if (targetCapsule == null)

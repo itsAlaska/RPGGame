@@ -14,6 +14,6 @@ public class Spinner : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(xAxis, yAxis, zAxis, Space.Self);
+        transform.Rotate(xAxis, yAxis , zAxis, Space.Self);
     }
 }
