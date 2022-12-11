@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
 using RPG.Saving;
+using RPG.Attributes;
 
 namespace RPG.Combat
 {

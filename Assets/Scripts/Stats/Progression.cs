@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace RPG.Stats
@@ -7,11 +8,23 @@ namespace RPG.Stats
     {
         [SerializeField] ProgressionCharacterClass[] characterClasses = null;
 
+        public float GetHealth(CharacterClass characterClass, int level)
+        {
+            foreach (ProgressionCharacterClass progressionClass in characterClasses)
+            {
+                if (progressionClass.characterClass == characterClass)
+                {
+                    return progressionClass.health[level - 1];
+                }
+            }
+            return 0;
+        }
+
         [System.Serializable]
         class ProgressionCharacterClass
         {
-            [SerializeField] CharacterClass characterClass;
-            [SerializeField] float[] health;
+            public CharacterClass characterClass;
+            public float[] health;
         }
     }
 }
