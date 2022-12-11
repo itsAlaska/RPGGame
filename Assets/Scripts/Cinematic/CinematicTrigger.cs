@@ -8,7 +8,14 @@ namespace RPG.Cinematics
 {
     public class CinematicTrigger : MonoBehaviour, ISaveable
     {
-        bool alreadyTriggered = false;
+        bool alreadyTriggered;
+
+        void Start() {
+            if (alreadyTriggered)
+            {
+                return;
+            }    
+        }
 
         void OnTriggerEnter(Collider other)
         {
