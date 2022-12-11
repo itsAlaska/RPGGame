@@ -29,6 +29,11 @@ namespace RPG.Attributes
             }
         }
 
+        public float GetPercentage()
+        {
+            return Mathf.RoundToInt(healthPoints / GetComponent<BaseStats>().GetHealth() * 100);
+        }
+
         void Die()
         {
             if (isDead)
