@@ -24,6 +24,14 @@ namespace RPG.Stats
             return levels[level - 1];
         }
 
+        public int GetLevels(Stat stat, CharacterClass cClass)
+        {
+            BuildLookup();
+            
+            float[] levels = lookupTable[cClass][stat];
+            return levels.Length;
+        }
+
         void BuildLookup()
         {
             if (lookupTable != null)
