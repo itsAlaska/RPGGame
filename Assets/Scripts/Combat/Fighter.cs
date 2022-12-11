@@ -146,6 +146,11 @@ namespace RPG.Combat
             weapon.Spawn(rightHandTransform, leftHandTransform, animator);
         }
 
+        public Health GetTarget()
+        {
+            return target;
+        }
+
         public object CaptureState()
         {
             return currentWeapon.name;
