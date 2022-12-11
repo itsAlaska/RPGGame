@@ -9,7 +9,15 @@ namespace RPG.Attributes
     public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField]
-        float healthPoints = 100f;
+        float healthPoints;
+
+        public float HealthPoints
+        {
+            get
+            {
+                return healthPoints;
+            }
+        }
 
         bool isDead = false;
         public bool IsDead
@@ -19,7 +27,7 @@ namespace RPG.Attributes
 
         void Start()
         {
-            healthPoints = GetComponent<BaseStats>().GetHealth();
+            healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         public void TakeDamage(GameObject instigator, float damage)
@@ -34,7 +42,7 @@ namespace RPG.Attributes
 
         public float GetPercentage()
         {
-            return Mathf.RoundToInt(healthPoints / GetComponent<BaseStats>().GetHealth() * 100);
+            return healthPoints / GetComponent<BaseStats>().GetStat(Stat.Health) * 100;
         }
 
         void Die()
@@ -50,9 +58,10 @@ namespace RPG.Attributes
         void AwardExperience(GameObject instigator)
         {
             Experience experience = instigator.GetComponent<Experience>();
-            if (experience == null) return;
+            if (experience == null)
+                return;
 
-            experience.GainExperience(GetComponent<BaseStats>().GetExperienceReward());
+            experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
         }
 
         public object CaptureState()
