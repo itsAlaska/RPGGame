@@ -6,7 +6,7 @@ using RPG.Saving;
 
 namespace RPG.Cinematics
 {
-    public class CinematicTrigger : MonoBehaviour
+    public class CinematicTrigger : MonoBehaviour, ISaveable
     {
         bool alreadyTriggered = false;
 
