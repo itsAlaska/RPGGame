@@ -59,6 +59,7 @@ namespace RPG.Saving
         private Dictionary<string, object> LoadFile(string saveFile)
         {
             string path = GetPathFromSaveFile(saveFile);
+            Debug.Log(path);
             if (!File.Exists(path))
             {
                 return new Dictionary<string, object>();
