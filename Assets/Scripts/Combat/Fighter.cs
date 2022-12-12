@@ -4,10 +4,11 @@ using RPG.Core;
 using RPG.Saving;
 using RPG.Attributes;
 using RPG.Stats;
+using System.Collections.Generic;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable
+    public class Fighter : MonoBehaviour, IAction, ISaveable, IModifierProvider
     {
         [SerializeField]
         float timeBetweenAttacks = 1f;
@@ -76,7 +77,7 @@ namespace RPG.Combat
                 return;
 
             float damage = GetComponent<BaseStats>().GetStat(Stat.Damage);
-            
+
             if (currentWeapon.HasProjectile())
             {
                 currentWeapon.LaunchProjectile(
@@ -131,6 +132,14 @@ namespace RPG.Combat
             GetComponent<Animator>().ResetTrigger("attack1");
             GetComponent<Animator>().ResetTrigger("attack2");
             GetComponent<Animator>().SetTrigger("stopAttack");
+        }
+
+        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return currentWeapon.GetDamage;
+            }
         }
 
         // Custom method to go between two random attack animations
