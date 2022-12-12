@@ -134,6 +134,18 @@ PrefabInstance:
       propertyPath: progression
       value: 
       objectReference: {fileID: 11400000, guid: ad375cfa6467b4c448fa772a2d6d4bb1, type: 2}
+    - target: {fileID: 4769909952029760425, guid: 5d926a974958679468dfef0c622af9c7, type: 3}
+      propertyPath: levelUpEffect
+      value: 
+      objectReference: {fileID: 7850795312961020803, guid: 5f1c26a581b94f443acbe596fb8c435b, type: 3}
+    - target: {fileID: 4769909952029760425, guid: 5d926a974958679468dfef0c622af9c7, type: 3}
+      propertyPath: selfHealEffect
+      value: 
+      objectReference: {fileID: 6594861823574748927, guid: 94026dcea6350c44ab69770654dfe158, type: 3}
+    - target: {fileID: 4769909952029760425, guid: 5d926a974958679468dfef0c622af9c7, type: 3}
+      propertyPath: shouldUseModifiers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7139059919535172602, guid: 5d926a974958679468dfef0c622af9c7, type: 3}
       propertyPath: weapon
       value: 

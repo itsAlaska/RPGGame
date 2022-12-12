@@ -16,11 +16,13 @@ namespace RPG.Movement
 
         bool isAttacking;
 
-        void Start()
+        void Awake()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             health = GetComponent<Health>();
         }
+
+        void Start() { }
 
         void Update()
         {
@@ -80,7 +82,7 @@ namespace RPG.Movement
 
         public void RestoreState(object state)
         {
-             // --- Struct approach ---
+            // --- Struct approach ---
             MoverSaveData data = (MoverSaveData)state;
             GetComponent<NavMeshAgent>().enabled = false;
             transform.position = data.position.ToVector();

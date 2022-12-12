@@ -16,6 +16,9 @@ namespace RPG.Combat
         float weaponDamage = 5f;
 
         [SerializeField]
+        float percentageBonus = 0f;
+
+        [SerializeField]
         float weaponRange = 2f;
 
         [SerializeField]
@@ -80,7 +83,13 @@ namespace RPG.Combat
             return projectile != null;
         }
 
-        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target, GameObject instigator, float calculateDamage)
+        public void LaunchProjectile(
+            Transform rightHand,
+            Transform leftHand,
+            Health target,
+            GameObject instigator,
+            float calculateDamage
+        )
         {
             Projectile projectileInstance = Instantiate(
                 projectile,
@@ -94,6 +103,11 @@ namespace RPG.Combat
         public float GetDamage
         {
             get { return weaponDamage; }
+        }
+
+        public float GetPercentageBonus
+        {
+            get { return percentageBonus; }
         }
         public float GetRange
         {
