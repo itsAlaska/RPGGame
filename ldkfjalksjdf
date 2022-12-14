@@ -1,0 +1,657 @@
+[33mcommit 2f13534c7e63d3ba9973667e1700aa4a2c4adee0[m[33m ([m[1;36mHEAD -> [m[1;32mcombat[m[33m, [m[1;31morigin/combat[m[33m)[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 14 15:53:53 2022 -0500
+
+    Add better fireball texture
+    
+    But something is going on with the saving system and I'm not totally
+    sure what i did to break it.
+
+[33mcommit 9a5d7089f39ee127c8fdc23cb72d5808293b8b12[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Mon Dec 12 09:48:38 2022 -0500
+
+    Add proper stat scaling for playuer and enemies
+
+[33mcommit f3ed397af92cd3ada1ac5c2ee7e2d2c8bb4945db[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Mon Dec 12 08:21:13 2022 -0500
+
+    Implement LazyValue guard against race conditions
+
+[33mcommit b623bfac1a6a3e008fd7489c91d30d6fbadf4eff[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Mon Dec 12 07:56:10 2022 -0500
+
+    Refactor some code to avoid race conditions
+
+[33mcommit f40bc6523e3c0a4397390afc109284b90f724f80[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Mon Dec 12 06:52:04 2022 -0500
+
+    Add interface fopr damage modifiers
+
+[33mcommit e34f66bcaedee078a61ad7bdb0fb829f342b2e79[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 13:26:49 2022 -0500
+
+    Add scaling damage with levels
+
+[33mcommit fe1e4c4f9aecd0f6009213c4947f2e1b4e1ec113[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 13:05:22 2022 -0500
+
+    Add level up effects and regen health on level
+
+[33mcommit 7ec1531849e70addce682a44e6dc8f82164b1017[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 11:32:55 2022 -0500
+
+    Add groundwork for a level up event
+
+[33mcommit 7e161a5415a03bc425f80c897251997d9a71166d[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 10:57:57 2022 -0500
+
+    Fix enemy health bug
+    
+    Corrected a bug where, when the player loaded a save, the enemy's
+    health would be reset to it's max.
+
+[33mcommit c04b0a64352b5344349443c5935ec6ad2eab7833[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 10:44:22 2022 -0500
+
+    Add level display to HUD
+
+[33mcommit d59f6b40ff164eb6c23fb716898bc797166c4308[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 08:17:02 2022 -0500
+
+    Add level detection by experience amount
+
+[33mcommit 2c20959cc79ece86314bdc32cc1d89ac6d26becb[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 07:34:19 2022 -0500
+
+    Improve stat lookup system for performance
+    
+    Just added a dictionary to the script so that it will compile a list to
+    draw values from once that it can then look through.
+
+[33mcommit 7b9cec1653646553c5a372a31c1483c78b4c9aee[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 07:07:35 2022 -0500
+
+    Add experience display to HUD
+
+[33mcommit d2c6b52bccac88a0e9238bd168479647dc12517f[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 06:55:59 2022 -0500
+
+    Add saving for experience point
+
+[33mcommit c15f76744f425f1613fddad724bebc9583e2cc25[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 06:35:40 2022 -0500
+
+    Add scalability to stat getter methods
+    
+    Mostly that you can pass any in the character class, level and stat at
+    request time vs having to specify via hard coding.
+
+[33mcommit ae577fb9dfb09e84ce5c74068921d1a375ad35fd[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 04:08:01 2022 -0500
+
+    Edit progression asset to include enum lists
+
+[33mcommit 2f70442339e46067eaa4ac4724bcddd7390b9c1b[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 03:49:20 2022 -0500
+
+    Add experience component
+
+[33mcommit 56b439f4099bd9086f023e18f222741662cf4a8d[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 03:20:53 2022 -0500
+
+    Add enemy health display
+
+[33mcommit df4a3760a27b5b781c437d8e1f9fbf34430376b2[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 02:51:23 2022 -0500
+
+    Add HUD that shows player health percentage.
+
+[33mcommit f946ab7e99d5760233e468a967d715c789a4febe[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 02:19:45 2022 -0500
+
+    Add ScriptableObject for character stats
+
+[33mcommit 1509a87e24031fb249ad5196a875edb83017b918[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 01:54:20 2022 -0500
+
+    Add character class scriptable object
+
+[33mcommit b1819e3862528dc45ffce5281bbb6e919eaa61ba[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 01:36:19 2022 -0500
+
+    Add class distinction for base Stats
+
+[33mcommit b33cd0a044980d9531187d912443ae26281287e9[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 01:21:58 2022 -0500
+
+    Trying to add auto formatter
+
+[33mcommit fdd36a4732f6d0356e9e4119cd9732f4299b1b0b[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 00:52:33 2022 -0500
+
+    Add respawn timer to wepaon pickups
+
+[33mcommit 22229cb9da860cfe40e32eedb35c3da6ab9242bf[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 11 00:21:24 2022 -0500
+
+    Add saving weapons between scenes / games.
+
+[33mcommit 90c11540a2c512d24777c51f2d81d7f9104ca9e6[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 10 23:43:32 2022 -0500
+
+    Fix animatiuon bug where it doesn't change
+    
+    When equipping a different weapon the animator was not updating
+
+[33mcommit e9e4e6d56468a77bc28c31be71621501f2075fa0[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 9 23:48:13 2022 -0500
+
+    Add clean up to Effects
+    
+    Basically just add scripts that control how long projectiles last and
+    making sure to destroy and instantiated effects
+
+[33mcommit 8c631f6fa1530ae47bc90aafa98c759171c1f3d8[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 9 23:28:35 2022 -0500
+
+    Add fireball weapon and hit impacts
+    
+    Added the hit impact effects for the fireball as well as the arrows
+
+[33mcommit d587e494fc4702d4ea27678dfa201834d5ad824a[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Thu Dec 8 21:12:54 2022 -0500
+
+    Improve projectile behavior
+    
+    Adds in to the script to continue going on if the target is dead and not
+     stop at the collider.
+
+[33mcommit 78432bb55bd5812eeeb4ba19fe6446eff47ce7a0[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Thu Dec 8 20:50:27 2022 -0500
+
+    Add better logic to weapon Pickups
+
+[33mcommit c6fe7b0bbdf2b12da22ebb8da303b909f2c244ec[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Thu Dec 8 20:29:09 2022 -0500
+
+    Add effects to enemy and player arrows
+
+[33mcommit d7832bc5467a042d34289b5330993ab6808f5a36[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 18:07:51 2022 -0500
+
+    Add arrow working properly to damage target
+
+[33mcommit eb7cf61d6c424d6c7d0cd0a9cf9ab0a40f65cf36[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 17:39:14 2022 -0500
+
+    Add projectil and bow shooting functionality
+
+[33mcommit 992d285faf183e8c88f17efd2414fda646947f2f[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 17:21:51 2022 -0500
+
+    Add arrow projectile prefab and script
+
+[33mcommit ca442f271cf075e71ca329e128e8d064ef09e81b[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 08:09:40 2022 -0500
+
+    Add bow and sword pickups
+
+[33mcommit c9abf7c79c35bb68240993012fc170e78e961967[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 07:21:54 2022 -0500
+
+    Add sword Pickup
+
+[33mcommit 6ab0cfd39cbbb62e9d281cbb5d773fcc63bdd991[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 06:43:34 2022 -0500
+
+    Add unarmed "weapon"
+
+[33mcommit b263a7a857632b8bfe614a431b14f9a0c3c2f9b5[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 06:27:57 2022 -0500
+
+    Create sword scriptable object
+
+[33mcommit adca43a56084563fc2ea54b6fabb49f856237def[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 03:20:39 2022 -0500
+
+    Add sword spawn and animation scripts
+
+[33mcommit de2aada9e8a9b6dfeacfe8589b2be88871c4f42e[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 02:48:33 2022 -0500
+
+    Add fade in when loading
+
+[33mcommit 5d7b7181cf2e77b60d22e87dc5ce1813385848f6[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 02:39:12 2022 -0500
+
+    Add ability to load from last scene player was in
+
+[33mcommit ba6bdfa32a0cee0048b175cd7428a6c7f946e106[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 02:23:53 2022 -0500
+
+    Fix bug in IsUnique method
+    
+    Forgot to add a ! in the first line of the method
+
+[33mcommit 9b4d98749311bb582320f62924dbfc7692696454[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 02:17:06 2022 -0500
+
+    Add health as a saveable property
+
+[33mcommit 7b430826884c8d913fffa665588fc2d73e3bdaf9[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 01:55:10 2022 -0500
+
+    Create ISaveable interface to streamline system
+
+[33mcommit 799197a78802b7952fd8f15e35d548459db47a29[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 01:38:28 2022 -0500
+
+    Add checkpoint saving when going between portals
+
+[33mcommit 5ea21e52bb67996584ae94911cba200d6b895ce4[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 01:23:38 2022 -0500
+
+    Add multi-scene saving to the save system
+
+[33mcommit af1431d258309a5c627eabf9c940f8285eea367d[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 00:49:12 2022 -0500
+
+    Add ability to save/load player and enemy position
+
+[33mcommit 138506c9a9e878bbf4961cbbc7a98fcf0e2faf81[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Wed Dec 7 00:25:22 2022 -0500
+
+    Add GUID to each object with script attached
+
+[33mcommit e8eceb19ac6cb4f50e92be331aae36d57fa05377[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 23:32:29 2022 -0500
+
+    Add custom saving system, make more scalable
+    
+    Added in a method that will allow the system to take all enetities from
+    the Scene that have the _mySaveableEntity component attached to them and
+    run the Save/Load operations on them.
+
+[33mcommit 61005357c825f7253d534f489316b972a3a7fcb8[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 06:12:39 2022 -0500
+
+    Begin save system structure
+
+[33mcommit 85ebcba31c0651647ee6a8d662b4206f2eb7456e[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 05:48:13 2022 -0500
+
+    Begin my own saving system
+
+[33mcommit 5c5d201c8d287e174bc294d21e18eb0773e8ec50[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 03:07:01 2022 -0500
+
+    Refactor data structure in Mover save
+
+[33mcommit 174d49214dfcd4b8e6e334f92e94b081832b153c[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 02:48:50 2022 -0500
+
+    Add load in start, and fade in at start
+
+[33mcommit 9341df797b597bf2d46e16ba1b4ecb43844ba56e[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 02:38:30 2022 -0500
+
+    Add quicksave between portals
+
+[33mcommit 974a3cbc0dc05069c233a6081707cbf53b5b9d23[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 02:17:24 2022 -0500
+
+    Add saving for HP, location and CS triggered
+
+[33mcommit 7ad5a4bd1891b68d621013e40182324a5f2fd786[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 02:06:09 2022 -0500
+
+    Implement saving / loading system
+    
+    Currently only is saving the position of the player and the enemies.
+
+[33mcommit 70e5df8d40afe535148861b514379d9eaeee22dd[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 01:49:57 2022 -0500
+
+    Import file saving prefab and create wrapper
+
+[33mcommit 0e8ac1ae8f6892a5f755a18b3a363aec7cb77914[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 01:32:04 2022 -0500
+
+    Add fading between scenes
+
+[33mcommit 1bc4482b48b87b75a402771b36662bd9f2bf58a4[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 00:55:31 2022 -0500
+
+    Add fader for scene transitions
+
+[33mcommit 1f501c1e854bde85f51010efca05c2be34d605c6[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 00:32:34 2022 -0500
+
+    Add destinations to portals
+
+[33mcommit bf4325346c1d108ab028f93dbda79081f34e5cc3[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Tue Dec 6 00:12:07 2022 -0500
+
+    Add spawn points to portals
+
+[33mcommit fe7be8fe5eb9b7a857989723b728b0dcfbb9e668[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Mon Dec 5 23:46:56 2022 -0500
+
+    Add scene transitions
+
+[33mcommit 2aff757e61670b4dd1dc0838075e0a5a82aa1f5f[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Mon Dec 5 08:20:41 2022 -0500
+
+    Add cinematic and scripts to control player
+    
+    Or more, take the control of the player away from the user so that
+    they can't move during the cutscene.
+
+[33mcommit 22a50e8263c758d5076217b0ad214202a2a4db5e[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sun Dec 4 10:47:47 2022 -0500
+
+    Add finished terrain and adjust scripts
+    
+    Mostly added a feature that changed the speed of the enemy when they
+    are either patroling or chasing. Also added in the enemy's patrol
+    paths for now.
+
+[33mcommit 02739ed46258e7d03e94434259f9fb275e55798a[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 09:13:24 2022 -0500
+
+    Add dwell time to EnemyAI parol behavior
+
+[33mcommit efce9fabb8dbc617dc00a60b1c4383863862ed79[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 09:00:24 2022 -0500
+
+    Add EnemyAI patrol behaviour
+
+[33mcommit e4aace7a5ff303456efbe04826dbd0c77fe69b65[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 08:32:07 2022 -0500
+
+    Add tool for visualizing waypoint
+    
+    Created a tool that is now a prefab that uses the children of the
+    parent object to draw sphere at that point and draw lines between
+    the points to show the path.
+
+[33mcommit 9eb5158f65aa5cfe34055f476a5ab93938324f4b[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 08:09:17 2022 -0500
+
+    Add suspicion time to the AI state cycle
+
+[33mcommit a169b81863eb3895d7b98e8028f75e50ecac23e6[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 07:56:03 2022 -0500
+
+    Add guard functionality to AI
+
+[33mcommit 47167f04260f95326ae93e05e642219cc8d93973[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 07:50:24 2022 -0500
+
+    Add Gizmo to represent enemy chase range
+
+[33mcommit 4de19c8bfb7d8226e4646a43bbb65ed43e116f03[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 07:41:35 2022 -0500
+
+    Add AI so the enemy will persue player
+    
+    And also attack, and on death player and enemy both have control diabled
+    and the Nav Mesh Agent is disabled
+
+[33mcommit cee0599c0e084fcea6a8077c55a91a0d9dfb0a05[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 07:04:48 2022 -0500
+
+    Hopefully caught up now
+
+[33mcommit 77d5a47002a21bb2d84b0ca7f9abe06083494d12[m
+Merge: 3848248 73267d2
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 06:54:20 2022 -0500
+
+    Merge branch 'combat' of https://github.com/alaskaThunderfx/RPGGame into combat
+
+[33mcommit 3848248c6768472cc605e5a517f9de508752b57f[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 06:53:18 2022 -0500
+
+    I guess I'm just staying on this branch
+
+[33mcommit e090d69bd0684636934f1a690a000abc1543126f[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 06:43:40 2022 -0500
+
+    Catch up from unity
+
+[33mcommit 73267d251311305373ee1727df6482be99c4f348[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/enemyai[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32menemyai[m[33m)[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 04:14:54 2022 -0500
+
+    Apparently .gitignore Plastic didn't work
+
+[33mcommit f6d622089928134958ed8fe202a0d54c7145f325[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 04:13:20 2022 -0500
+
+    Save scene, add Plastic to .gitignore
+
+[33mcommit 5bf35e399b310b6e88e0955ca106a58dab29c10f[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 04:10:43 2022 -0500
+
+    Work out animation bugs for Attack
+    
+    Just added in a few lines to prevent weird animation errors that occur
+    when certain conditions are met.
+
+[33mcommit 722fc0e0040008897ceb2e5168697903180615c8[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 03:51:55 2022 -0500
+
+    Add fix for targeting
+    
+    Player used to not be able to target an enemy behind a dead enemy, so
+    some checks were added to prevent that.
+
+[33mcommit bfe11afe7390a9bbdde178d5b0a22292d1d5ad01[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 03:41:32 2022 -0500
+
+    Add character facing target when attacking
+
+[33mcommit 0b0bf53acf1831c702b9ffe263f1185e9d6de4ee[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 03:32:51 2022 -0500
+
+    Tighten up animation behavior
+    
+    Namely by making sure the player stops attacking when you move away
+    from them.
+
+[33mcommit d8d050df8b67f5d269e7f5d404bc9d1f43e98ffb[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 02:43:49 2022 -0500
+
+    Rearrange scripts on prefab variants
+    
+    Gave Character the Health component
+    Gave Player the PlayerController component
+    Removed PlayerController from Enemy
+
+[33mcommit cb30b803ee2c12fc75d39fc4161f965ddd5a9bda[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 02:26:20 2022 -0500
+
+    Add player and enemy prefab variants
+    
+    Also rearrange file structure
+
+[33mcommit 8838994c7478412148dd06839930b0876bd5f8cc[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 02:01:58 2022 -0500
+
+    Add Health component and TakeDamage method
+    
+    Also add the damage only happening when the Hit() animation event
+    occurs.
+
+[33mcommit 19748c7e3571d6ac4a9b17467780615f65a0f736[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 01:46:10 2022 -0500
+
+    Add ability to throttle rate of attacks
+    
+    Also includes my own method for going between the two attack animations
+    randomly.
+
+[33mcommit 8746cd9c12bc91d6c1d5aa6fc2dc1e1e56e0d412[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 01:22:01 2022 -0500
+
+    Add animation trigger for Attack
+
+[33mcommit 1d0ccaeef0537a028d457cc401d0c42fb802546a[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 00:21:19 2022 -0500
+
+    Complete ActionScheduler and add IAction
+    
+    This helps with ending circular dependencies
+
+[33mcommit bb2d9c6fbbf368112f84dfb982b6a50dd763cc89[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Sat Dec 3 00:06:00 2022 -0500
+
+    Begin implenting ActionScheduler
+
+[33mcommit e046781912c1712a3c1216d64c7a8ace373cd871[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 2 23:43:43 2022 -0500
+
+    Fix console error by moving target check
+    
+    Moved the check for whether target is null and refactored a bit in the
+    Update method in the Fighter Script.
+
+[33mcommit fc63549373818f4eaf44d422e23932eb394947f5[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 2 23:37:58 2022 -0500
+
+    Add condition to allow player to stop targeting
+    
+    Lets player be able to click away to stop targeting the attack target
+
+[33mcommit 63e4bac384691590f28794e8b6f9393d2249fe43[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 2 23:20:44 2022 -0500
+
+    Add distance buffer to Attack method
+
+[33mcommit a466f0fb7999d9629f2ace9fd3c28cab29361005[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 2 23:02:55 2022 -0500
+
+    Add to PlayerController to allow cursor accordance
+    
+    Just added some conditions so that the raycast from the players mouse
+    will know whether it is on an interactable object or not.
+
+[33mcommit a45f27d4f27457f7617fd8eb4f20f02385d40df1[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 2 22:36:03 2022 -0500
+
+    Add raycast detection for combat target
+
+[33mcommit a1e2fb4805ec1b6de0fb0d3d417774fed58b7043[m[33m ([m[1;32mmain.private.0[m[33m)[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 2 22:16:07 2022 -0500
+
+    PlasticSCM catchup
+
+[33mcommit fa6d472e1e2bd22f81f5d102d2582cb867cf04ce[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 2 22:14:43 2022 -0500
+
+    PlasticSCM catch up
+
+[33mcommit 7b06507511b12e06f2a235f1f4759bed63c3edb3[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 2 22:12:20 2022 -0500
+
+    Initial commit with some scripts ans assets
+
+[33mcommit da07f82b0e9285bc34098104e01d14745ef7120c[m
+Author: alaskaThunderfx <51172480+alaskaThunderfx@users.noreply.github.com>
+Date:   Fri Dec 2 22:11:47 2022 -0500
+
+    first commit

@@ -26,10 +26,9 @@ namespace RPG.Stats
 
         [SerializeField]
         bool shouldUseModifiers = false;
+        public event Action onLevelUp;
 
         LazyValue<int> currentLevel;
-
-        public event Action onLevelUp;
 
         Experience experience;
 
