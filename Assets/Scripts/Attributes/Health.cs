@@ -59,12 +59,12 @@ namespace RPG.Attributes
 
         public float GetHealthPoints()
         {
-            return healthPoints.value;
+            return Mathf.Round(healthPoints.value);
         }
 
         public float GetMaxHitPoints()
         {
-            return GetComponent<BaseStats>().GetStat(Stat.Health);
+            return Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.Health));
         }
 
         public float GetPercentage()
