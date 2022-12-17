@@ -1,4 +1,5 @@
 using System.Collections;
+using RPG.Attributes;
 using RPG.Control;
 using UnityEngine;
 
@@ -10,19 +11,31 @@ namespace RPG.Combat
         WeaponConfig weapon = null;
 
         [SerializeField]
+        float healthToRestore = 0f;
+
+        [SerializeField]
         float respawnTime = 5f;
 
         void OnTriggerEnter(Collider other)
         {
             if (other.tag == "Player")
             {
-                Pickup(other.GetComponent<Fighter>());
+                Pickup(other.gameObject);
             }
         }
 
-        void Pickup(Fighter fighter)
+        void Pickup(GameObject subject)
         {
-            fighter.EquipWeapon(weapon);
+            if (weapon != null)
+            {
+subject.GetComponent<Fighter>().EquipWeapon(weapon);
+            }
+
+            if (healthToRestore > 0)
+            {
+                subject.GetComponent<Health>().Heal(healthToRestore);
+            }
+            
             StartCoroutine(HideForSeconds(respawnTime));
         }
 
@@ -51,7 +64,7 @@ namespace RPG.Combat
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Pickup(callingController.GetComponent<Fighter>());
+                Pickup(callingController.gameObject);
             }
             return true;
         }
