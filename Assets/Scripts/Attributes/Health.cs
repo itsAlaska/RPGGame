@@ -16,6 +16,9 @@ namespace RPG.Attributes
         [SerializeField]
         UnityEvent<float> takeDamage;
 
+        [SerializeField]
+        UnityEvent onDie;
+
         LazyValue<float> healthPoints;
 
         bool isDead = false;
@@ -58,6 +61,7 @@ namespace RPG.Attributes
             takeDamage.Invoke(damage);
             if (healthPoints.value == 0)
             {
+                onDie.Invoke();
                 Die();
                 AwardExperience(instigator);
             }

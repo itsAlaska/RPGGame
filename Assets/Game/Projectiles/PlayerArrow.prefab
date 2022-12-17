@@ -9807,6 +9807,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1272153261918884264, guid: 2113c1f8e7b496e4183378e55088ed77, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4027442740950590676, guid: 2113c1f8e7b496e4183378e55088ed77, type: 3}
       propertyPath: m_Name
       value: PlayerArrow
@@ -9815,10 +9819,6 @@ PrefabInstance:
       propertyPath: hitEffect
       value: 
       objectReference: {fileID: 1725273190611177636, guid: 37d37d05dd85e8f4aa3eb96c10b0417a, type: 3}
-    - target: {fileID: 6334287375711592903, guid: 2113c1f8e7b496e4183378e55088ed77, type: 3}
-      propertyPath: lifeAfterImpact
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8309434507917638672, guid: 2113c1f8e7b496e4183378e55088ed77, type: 3}
       propertyPath: m_RootOrder
       value: 0
