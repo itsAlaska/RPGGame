@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using RPG.Saving;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RPG.SceneManagement
 {
@@ -37,6 +38,11 @@ namespace RPG.SceneManagement
             if (Input.GetKeyDown(KeyCode.Delete))
             {
                 Delete();
+            }
+            if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.name);
             }
         }
 
