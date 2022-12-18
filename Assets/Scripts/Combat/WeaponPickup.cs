@@ -24,7 +24,6 @@ namespace RPG.Combat
             if (other.tag == "Player")
             {
                 Pickup(other.gameObject);
-                Instantiate(restoreParticles, other.transform);
             }
         }
 
@@ -38,6 +37,7 @@ namespace RPG.Combat
             if (healthToRestore > 0)
             {
                 subject.GetComponent<Health>().Heal(healthToRestore);
+                Instantiate(restoreParticles, subject.transform);
             }
 
             StartCoroutine(HideForSeconds(respawnTime));
@@ -64,7 +64,7 @@ namespace RPG.Combat
             return CursorType.Pickup;
         }
 
-        public bool HandleRaycast(PlayerController callingController)
+        public bool HandleRaycast(Control.PlayerController callingController)
         {
             if (Input.GetMouseButtonDown(0))
             {

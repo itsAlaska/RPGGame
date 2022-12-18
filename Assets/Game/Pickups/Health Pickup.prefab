@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: healthToRestore
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5344430106516650347, guid: 759ce6a7e4c61194c8eba4033845a9ce, type: 3}
+      propertyPath: restoreParticles
+      value: 
+      objectReference: {fileID: 6594861823574748927, guid: 94026dcea6350c44ab69770654dfe158, type: 3}
     - target: {fileID: 7371797565431963832, guid: 759ce6a7e4c61194c8eba4033845a9ce, type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: 1.3685116e+28
