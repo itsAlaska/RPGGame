@@ -32,6 +32,9 @@ namespace RPG.Control
         [Range(0, 1)]
         float patrolSpeedFraction = .2f;
 
+        [SerializeField]
+        float shoutDistance = 5f;
+
         Fighter fighter;
         Health health;
         Mover mover;
@@ -139,10 +142,29 @@ namespace RPG.Control
 
         void AttackBehaviour()
         {
-            // probably adjust the move speed here
-            // just have two variables one for patrol speed one for chase speed
             timeSinceLastSawPlayer = 0;
             fighter.Attack(player);
+
+            AggravateNearbyEnemies();
+        }
+
+        private void AggravateNearbyEnemies()
+        {
+            RaycastHit[] hits = Physics.SphereCastAll(
+                transform.position,
+                shoutDistance,
+                Vector3.up,
+                0
+            );
+
+            foreach (RaycastHit hit in hits)
+            {
+                AIController ai = hit.collider.GetComponent<AIController>();
+
+                if (ai == null)
+                    continue;
+                ai.Aggravate();
+            }
         }
 
         bool IsAggravated()
