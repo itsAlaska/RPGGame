@@ -17,6 +17,9 @@ namespace RPG.Control
         float suspicionTime = 3f;
 
         [SerializeField]
+        float aggroCooldownTime = 5f;
+
+        [SerializeField]
         float waypointDwellTime = 3f;
 
         [SerializeField]
@@ -37,6 +40,7 @@ namespace RPG.Control
         LazyValue<Vector3> guardPosition;
         float timeSinceLastSawPlayer = Mathf.Infinity;
         float timeSinceArrivedAtWaypoint = Mathf.Infinity;
+        float timeSinceAggravated = Mathf.Infinity;
         int currentWaypointIndex = 0;
 
         void Awake()
@@ -64,7 +68,7 @@ namespace RPG.Control
             if (health.IsDead)
                 return;
 
-            if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
+            if (IsAggravated() && fighter.CanAttack(player))
             {
                 AttackBehaviour();
             }
@@ -80,10 +84,16 @@ namespace RPG.Control
             UpdateTimers();
         }
 
+        public void Aggravate()
+        {
+            timeSinceAggravated = 0;
+        }
+
         private void UpdateTimers()
         {
             timeSinceLastSawPlayer += Time.deltaTime;
             timeSinceArrivedAtWaypoint += Time.deltaTime;
+            timeSinceAggravated += Time.deltaTime;
         }
 
         void PatrolBehaviour()
@@ -135,13 +145,13 @@ namespace RPG.Control
             fighter.Attack(player);
         }
 
-        bool InAttackRangeOfPlayer()
+        bool IsAggravated()
         {
             float distanceToPlayer = Vector3.Distance(
                 transform.position,
                 player.transform.position
             );
-            return distanceToPlayer < chaseDistance;
+            return distanceToPlayer < chaseDistance || timeSinceAggravated < aggroCooldownTime;
         }
 
         // Called by Unity
