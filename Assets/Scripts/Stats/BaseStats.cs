@@ -22,9 +22,6 @@ namespace RPG.Stats
         GameObject levelUpEffect;
 
         [SerializeField]
-        GameObject selfHealEffect;
-
-        [SerializeField]
         bool shouldUseModifiers = false;
 
         public event Action onLevelUp;
@@ -74,7 +71,6 @@ namespace RPG.Stats
         void LevelUpEffect()
         {
             Instantiate(levelUpEffect, transform.position, transform.rotation);
-            Instantiate(selfHealEffect, transform.position, transform.rotation);
         }
 
         public float GetStat(Stat stat)

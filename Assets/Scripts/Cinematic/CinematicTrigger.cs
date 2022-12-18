@@ -8,7 +8,9 @@ namespace RPG.Cinematics
 {
     public class CinematicTrigger : MonoBehaviour, ISaveable
     {
-        bool alreadyTriggered;
+        [SerializeField]
+        Collider trigger;
+        bool alreadyTriggered = false;
 
         void Start() {
             if (alreadyTriggered)
@@ -23,6 +25,7 @@ namespace RPG.Cinematics
             {
                 alreadyTriggered = true;
                 GetComponent<PlayableDirector>().Play();
+                trigger.enabled = false;
             }
         }
 

@@ -16,11 +16,15 @@ namespace RPG.Combat
         [SerializeField]
         float respawnTime = 5f;
 
+        [SerializeField]
+        GameObject restoreParticles;
+
         void OnTriggerEnter(Collider other)
         {
             if (other.tag == "Player")
             {
                 Pickup(other.gameObject);
+                Instantiate(restoreParticles, other.transform);
             }
         }
 
@@ -28,14 +32,14 @@ namespace RPG.Combat
         {
             if (weapon != null)
             {
-subject.GetComponent<Fighter>().EquipWeapon(weapon);
+                subject.GetComponent<Fighter>().EquipWeapon(weapon);
             }
 
             if (healthToRestore > 0)
             {
                 subject.GetComponent<Health>().Heal(healthToRestore);
             }
-            
+
             StartCoroutine(HideForSeconds(respawnTime));
         }
 
