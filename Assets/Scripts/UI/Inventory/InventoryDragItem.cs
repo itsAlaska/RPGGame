@@ -1,18 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Core.UI.Dragging;
 using UnityEngine;
 
-public class InventoryDragItem : MonoBehaviour
+namespace RPG.UI.Inventories
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public class InventoryDragItem : DragItem<Sprite> { }
 }
