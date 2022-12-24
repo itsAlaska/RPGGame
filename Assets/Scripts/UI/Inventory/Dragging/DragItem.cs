@@ -40,6 +40,7 @@ namespace RPG.Core.UI.Dragging
             transform.SetParent(originalParent, true);
 
             IDragDestination<T> container;
+
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 container = parentCanvas.GetComponent<IDragDestination<T>>();
@@ -73,6 +74,8 @@ namespace RPG.Core.UI.Dragging
 
             var destinationContainer = destination as IDragContainer<T>;
             var sourceContainer = source as IDragContainer<T>;
+            Debug.Log(destinationContainer.GetItem());
+
 
             if (
                 destinationContainer == null
@@ -160,7 +163,12 @@ namespace RPG.Core.UI.Dragging
             return true;
         }
 
-        int CalculateTakeBack(T removedItem, int removedNumber, IDragContainer<T> removeSource, IDragContainer<T> destination)
+        int CalculateTakeBack(
+            T removedItem,
+            int removedNumber,
+            IDragContainer<T> removeSource,
+            IDragContainer<T> destination
+        )
         {
             var takeBackNumber = 0;
             var destinationMaxAcceptable = destination.MaxAcceptable(removedItem);
@@ -170,7 +178,7 @@ namespace RPG.Core.UI.Dragging
                 takeBackNumber = removedNumber - destinationMaxAcceptable;
 
                 var sourceTakeBackAcceptable = removeSource.MaxAcceptable(removedItem);
-                
+
                 if (sourceTakeBackAcceptable < takeBackNumber)
                 {
                     return 0;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2570104874152739316}
   - component: {fileID: 3878805905024290106}
   - component: {fileID: 996038845602927449}
+  - component: {fileID: 1984573671394241020}
   m_Layer: 0
   m_Name: InventoryItem
   m_TagString: Untagged
@@ -35,10 +36,10 @@ RectTransform:
   m_Father: {fileID: 4272106627481664161}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -30, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8249311719653025276
 CanvasRenderer:
@@ -102,6 +103,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ca4fa0dc8d07a409bf83cc24032f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &1984573671394241020
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941705653714264764}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8878249153795249179
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,4 +205,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8717ef6b9a3618f4ba8b58d71ff14166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 996038845602927449}
