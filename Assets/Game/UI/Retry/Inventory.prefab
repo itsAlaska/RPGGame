@@ -251,7 +251,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 9202498563147852848}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.6915742
+  m_Size: 0.6915741
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 4657444576044875090}
   - component: {fileID: 6150761491692205412}
   - component: {fileID: 4962134392512673753}
+  - component: {fileID: 3403861972952069181}
   m_Layer: 0
   m_Name: Inventory Items
   m_TagString: Untagged
@@ -441,6 +442,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 1
+--- !u!114 &3403861972952069181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4977567081686713017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652675c3d8fbb7443aca9f5af1726f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryItemPrefab: {fileID: 7170559274815027366, guid: 82f16ecdf2868e14a90ff10b7b0b1303, type: 3}
 --- !u!1 &5693888299019128857
 GameObject:
   m_ObjectHideFlags: 0

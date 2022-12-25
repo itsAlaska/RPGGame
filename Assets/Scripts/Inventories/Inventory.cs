@@ -128,7 +128,8 @@ namespace RPG.Inventories
         void Awake()
         {
             slots = new InventoryItem[inventorySize];
-            // slots[0] = InventoryItem.GetFromID();
+            slots[0] = InventoryItem.GetFromID("1a279448-8f64-420b-b498-fe184c0ade46");
+            slots[1] = InventoryItem.GetFromID("23ebf7b7-ef4d-4515-b6ec-c78873c20df9");
         }
 
         /// <summary>
@@ -157,7 +158,7 @@ namespace RPG.Inventories
             return -1;
         }
 
-        object CaptureState()
+        object ISaveable.CaptureState()
         {
             var slotsStrings = new string[inventorySize];
             for (int i = 0; i < inventorySize; i++)
@@ -170,7 +171,7 @@ namespace RPG.Inventories
             return slotsStrings;
         }
 
-        void RestoreState(object state)
+        void ISaveable.RestoreState(object state)
         {
             var slotsTrings = (string[])state;
             for (int i = 0; i < inventorySize; i++)
