@@ -11,7 +11,6 @@ namespace RPG.UI.Inventories
         [SerializeField] InventoryItemIcon icon = null;
 
         int index;
-        InventoryItem item;
         Inventory inventory;
 
         public void Setup(Inventory inventory, int index)
