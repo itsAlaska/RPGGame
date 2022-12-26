@@ -74,7 +74,6 @@ namespace RPG.Core.UI.Dragging
 
             var destinationContainer = destination as IDragContainer<T>;
             var sourceContainer = source as IDragContainer<T>;
-            Debug.Log(destinationContainer.GetItem());
 
 
             if (
