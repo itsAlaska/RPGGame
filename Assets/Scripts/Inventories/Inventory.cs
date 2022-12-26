@@ -54,6 +54,7 @@ namespace RPG.Inventories
         /// Attempt to add the items to the first available slot.
         /// </summary>
         /// <param name="item">The item to add.</param>
+        /// <param name="number">Amount of item to add.</param>
         /// <returns>Whether or not the item could be added.</returns>
         public bool AddToFirstEmptySlot(InventoryItem item, int number)
         {
@@ -64,8 +65,8 @@ namespace RPG.Inventories
                 return false;
             }
 
-            // TODO
-            // slots[i] = item;
+            slots[i].item = item;
+            slots[i].number += number;
             if (inventoryUpdated != null)
             {
                 inventoryUpdated();
@@ -96,13 +97,26 @@ namespace RPG.Inventories
         {
             return slots[slot].item;
         }
+        
+        /// <summary>
+        /// Return the amount of the item in the given slot.
+        /// </summary>
+        public int GetNumberInSlot(int slot)
+        {
+            return slots[slot].number;
+        }
 
         /// <summary>
         /// Remove the item from the given slot.
         /// </summary>
         public void RemoveFromSlot(int slot, int number)
         {
-            slots[slot].item = null;
+            slots[slot].number -= number;
+            if (slots[slot].number <= 0)
+            {
+                slots[slot].number = 0;
+                slots[slot].item = null;
+            }
             if (inventoryUpdated != null)
             {
                 inventoryUpdated();
@@ -126,6 +140,7 @@ namespace RPG.Inventories
             }
 
             slots[slot].item = item;
+            slots[slot].number += number;
             if (inventoryUpdated != null)
             {
                 inventoryUpdated();

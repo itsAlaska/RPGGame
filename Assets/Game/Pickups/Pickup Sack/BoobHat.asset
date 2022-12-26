@@ -17,4 +17,4 @@ MonoBehaviour:
   description: It's a hat for boobs.
   icon: {fileID: 21300000, guid: ccb052f877afaa54e9474cd1bb71a87d, type: 3}
   pickup: {fileID: 7186222721364130607, guid: e1908f247d236d94889944acf6f3a307, type: 3}
-  stackable: 0
+  stackable: 1

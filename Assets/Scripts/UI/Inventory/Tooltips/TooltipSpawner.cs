@@ -46,7 +46,7 @@ namespace RPG.Core.UI.Tooltips
 
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
-            var parentCanvas = GetComponent<Canvas>();
+            var parentCanvas = GetComponentInParent<Canvas>();
 
             if (tooltip && !CanCreateTooltip())
             {

@@ -24,7 +24,7 @@ namespace RPG.Inventories
         public void Setup(InventoryItem item, int number)
         {
             this.item = item;
-            // TODO
+            this.number = number;
         }
 
         public InventoryItem GetItem()
@@ -34,7 +34,7 @@ namespace RPG.Inventories
 
         public void PickupItem()
         {
-            bool foundSlot = inventory.AddToFirstEmptySlot(item, 1);
+            bool foundSlot = inventory.AddToFirstEmptySlot(item, number);
             if (foundSlot)
             {
                 Destroy(gameObject);
