@@ -7,6 +7,7 @@ namespace RPG.Inventories
     public class Pickup : MonoBehaviour
     {
         InventoryItem item;
+        int number;
 
         Inventory inventory;
 
@@ -20,9 +21,10 @@ namespace RPG.Inventories
         /// Set the vital data after creating the prefab.
         /// </summary>
         /// <param name="item">The type of item this prefab represents.</param>
-        public void Setup(InventoryItem item)
+        public void Setup(InventoryItem item, int number)
         {
             this.item = item;
+            // TODO
         }
 
         public InventoryItem GetItem()
@@ -32,7 +34,7 @@ namespace RPG.Inventories
 
         public void PickupItem()
         {
-            bool foundSlot = inventory.AddToFirstEmptySlot(item);
+            bool foundSlot = inventory.AddToFirstEmptySlot(item, 1);
             if (foundSlot)
             {
                 Destroy(gameObject);
