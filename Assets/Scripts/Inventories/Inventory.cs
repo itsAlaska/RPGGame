@@ -214,6 +214,13 @@ namespace RPG.Inventories
             return -1;
         }
 
+        [System.Serializable]
+        struct InventorySlotRecord
+        {
+            public string itemID;
+            public int number;
+        }
+
         object ISaveable.CaptureState()
         {
             var slotsStrings = new string[inventorySize];

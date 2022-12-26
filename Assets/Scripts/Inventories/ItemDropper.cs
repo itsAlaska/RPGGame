@@ -20,7 +20,6 @@ namespace RPG.Inventories
         /// <param name="number">Amount of this item.</param>
         public void DropItem(InventoryItem item, int number)
         {
-            // TODO
             SpawnPickup(item, number, GetDropLocation());
         }
 

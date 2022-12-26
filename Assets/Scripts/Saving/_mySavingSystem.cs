@@ -64,7 +64,7 @@ namespace RPG.Saving
                 return new Dictionary<string, object>();
             }
 
-            print($"Loading from {saveFile}!");
+            print($"Loading from {saveFile} at {path}!");
 
             using (FileStream stream = File.Open(path, FileMode.Open))
             {
