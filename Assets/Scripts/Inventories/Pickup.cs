@@ -32,6 +32,11 @@ namespace RPG.Inventories
             return item;
         }
 
+        public int GetNumber()
+        {
+            return number;
+        }
+
         public void PickupItem()
         {
             bool foundSlot = inventory.AddToFirstEmptySlot(item, number);
