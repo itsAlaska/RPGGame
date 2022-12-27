@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8fafe20ba5e9f74a89d6116d29ef176, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  itemID: f4e1833d-f08f-4a23-82eb-cef5f5d44d10
+  displayName: Sword
+  description: Pretty sharp and swingable.
+  icon: {fileID: 21300000, guid: c38fcb09202f45346be5ebda367580f1, type: 3}
+  pickup: {fileID: 1711996907944742749, guid: 4722c5c50fea0b3418957eea2028daa9, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: 19cd5a0e44907f04aad255061d89dd9b, type: 2}
   equippedPrefab: {fileID: 3843656598192775090, guid: 1db6ac36fbd19904ab0ca6e9da7573a1, type: 3}
   weaponDamage: 1

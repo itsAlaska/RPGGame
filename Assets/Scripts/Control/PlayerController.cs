@@ -20,14 +20,13 @@ namespace RPG.Control
             public Vector2 hotspot;
         }
 
-        [SerializeField]
-        CursorMapping[] cursorMappings = null;
+        [SerializeField] CursorMapping[] cursorMappings = null;
 
-        [SerializeField]
-        float maxNavMeshProjectionDistance = 1f;
+        [SerializeField] float maxNavMeshProjectionDistance = 1f;
 
-        [SerializeField]
-        float rayCastRadius = 1f;
+        [SerializeField] float rayCastRadius = 1f;
+
+        private bool isDraggingUI = false;
 
         void Awake()
         {
@@ -54,7 +53,7 @@ namespace RPG.Control
 
         bool InteractWithComponent()
         {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            RaycastHit[] hits = RaycastAllSorted();
             foreach (RaycastHit hit in hits)
             {
                 IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
@@ -67,6 +66,7 @@ namespace RPG.Control
                     }
                 }
             }
+
             return false;
         }
 
@@ -87,11 +87,27 @@ namespace RPG.Control
 
         bool InteractWithUI()
         {
+            if (Input.GetMouseButtonUp(0))
+            {
+                isDraggingUI = false;
+            }
+
             if (EventSystem.current.IsPointerOverGameObject())
             {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isDraggingUI = true;
+                }
+
                 SetCursor(CursorType.UI);
                 return true;
             }
+
+            if (isDraggingUI)
+            {
+                return true;
+            }
+
             return false;
         }
 
@@ -108,9 +124,11 @@ namespace RPG.Control
                 {
                     GetComponent<Mover>().StartMoveAction(target, 1f);
                 }
+
                 SetCursor(CursorType.Movement);
                 return true;
             }
+
             return false;
         }
 
@@ -186,6 +204,7 @@ namespace RPG.Control
                     return mapping;
                 }
             }
+
             return cursorMappings[0];
         }
 

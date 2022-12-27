@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8fafe20ba5e9f74a89d6116d29ef176, type: 3}
   m_Name: Bow(Player)
   m_EditorClassIdentifier: 
+  itemID: c12c9dff-f248-4a2a-b248-c4646905f849
+  displayName: Bow
+  description: Shoots arrows at stuff.
+  icon: {fileID: 21300000, guid: 78c4c29502beeec4984d5fcd0cb715d9, type: 3}
+  pickup: {fileID: 1399941511217759795, guid: 77703a4bdd9637645bc6f6054d259e1e, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: b7301fa1a5689fd469d045ca421151a9, type: 2}
   equippedPrefab: {fileID: 6323058416716212687, guid: f4387bfbc34a45241a9d6add455b6714, type: 3}
   weaponDamage: 1.3
