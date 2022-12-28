@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
@@ -6,6 +7,8 @@ namespace RPG.Dialogue.Editor
 {
     public class DialogueEditor : EditorWindow
     {
+        private Dialogue selectedDialogue = null;
+
         [MenuItem("Window/Dialogue Editor")]
         public static void ShowEditorWindow()
         {
@@ -22,17 +25,35 @@ namespace RPG.Dialogue.Editor
                 ShowEditorWindow();
                 return true;
             }
-            
+
             return false;
+        }
+
+        private void OnEnable()
+        {
+            Selection.selectionChanged += OnSelectionChanged;
+        }
+
+        private void OnSelectionChanged()
+        {
+            Dialogue newDialogue = Selection.activeObject as Dialogue;
+            if (newDialogue != null)
+            {
+                selectedDialogue = newDialogue;
+                Repaint();
+            }
         }
 
         private void OnGUI()
         {
-            EditorGUILayout.LabelField("Apple");
-            EditorGUILayout.LabelField("Orange");
-            EditorGUILayout.LabelField("Pear");
-            
+            if (selectedDialogue == null)
+            {
+                EditorGUILayout.LabelField("No dialogue selected.");
+            }
+            else
+            {
+                EditorGUILayout.LabelField(selectedDialogue.name);
+            }
         }
     }
 }
-
