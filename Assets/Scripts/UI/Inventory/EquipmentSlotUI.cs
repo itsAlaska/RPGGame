@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using RPG.Core.UI.Dragging;
 using RPG.Inventories;
 using UnityEditor;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 namespace RPG.UI.Inventories
