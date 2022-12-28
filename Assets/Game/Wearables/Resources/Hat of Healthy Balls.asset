@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Hat of Healthy Balls
   m_EditorClassIdentifier: 
   itemID: a572bf4d-3fbe-4ff7-8ca0-30e86f41f3c5
-  displayName: 
-  description: 
-  icon: {fileID: 0}
-  pickup: {fileID: 0}
+  displayName: Hat of Healthy Balls
+  description: A furry, wrinkly hat that adds +5 to your health!
+  icon: {fileID: 21300000, guid: 33d39c88d24faa44c85c68dc4d0349a9, type: 3}
+  pickup: {fileID: 5402853316129546468, guid: 34cb2ae5aac06824b893c3edb446dcec, type: 3}
   stackable: 0
-  allowedEquipLocation: 5
-  additiveModifiers: []
+  allowedEquipLocation: 0
+  additiveModifiers:
+  - stat: 0
+    value: 5
   percentageModifiers: []
