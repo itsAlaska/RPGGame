@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb84e3682a22634f86349098e54fe55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healFXPrefab: {fileID: 6594861823574748927, guid: 94026dcea6350c44ab69770654dfe158, type: 3}
 --- !u!54 &4474017530476096189
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -86,15 +87,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1404539331274128250, guid: 81f08d6bd2fb08a41921c7e2110e45a5, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1404539331274128250, guid: 81f08d6bd2fb08a41921c7e2110e45a5, type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: 0
+      value: 1.1888401e+16
       objectReference: {fileID: 0}
     - target: {fileID: 1404539331274128250, guid: 81f08d6bd2fb08a41921c7e2110e45a5, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 1.438e-42
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 3476501509501729234, guid: 81f08d6bd2fb08a41921c7e2110e45a5, type: 3}
       propertyPath: m_Name
