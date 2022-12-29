@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.MPE;
@@ -10,7 +11,8 @@ namespace RPG.Dialogue.Editor
     {
         private Dialogue selectedDialogue = null;
         private GUIStyle nodeStyle = null;
-        private bool dragging = false;
+        private DialogueNode draggingNode = null;
+        private Vector2 draggingOffset;
 
         [MenuItem("Window/Dialogue Editor")]
         public static void ShowEditorWindow()
@@ -71,19 +73,23 @@ namespace RPG.Dialogue.Editor
 
         private void ProcessEvents()
         {
-            if (Event.current.type == EventType.MouseDown && !dragging)
+            if (Event.current.type == EventType.MouseDown && draggingNode == null)
             {
-                dragging = true;
+                draggingNode = GetNodeAtPoint(Event.current.mousePosition);
+                if (draggingNode != null)
+                {
+                    draggingOffset = draggingNode.rect.position - Event.current.mousePosition;
+                }
             }
-            else if (Event.current.type == EventType.MouseDrag && dragging)
+            else if (Event.current.type == EventType.MouseDrag && draggingNode != null)
             {
                 Undo.RecordObject(selectedDialogue, "Move Dialogue Node");
-                selectedDialogue.GetRootNode().rect.position = Event.current.mousePosition;
-                GUI.changed = true;e
+                draggingNode.rect.position = Event.current.mousePosition + draggingOffset;
+                GUI.changed = true;
             }
-            else if (Event.current.type == EventType.MouseUp && dragging)
+            else if (Event.current.type == EventType.MouseUp && draggingNode != null)
             {
-                dragging = false;
+                draggingNode = null;
             }
         }
 
@@ -106,6 +112,20 @@ namespace RPG.Dialogue.Editor
             }
 
             GUILayout.EndArea();
+        }
+
+        private DialogueNode GetNodeAtPoint(Vector2 point)
+        {
+            DialogueNode foundNode = null;
+            foreach (var node in selectedDialogue.GetAllNodes())
+            {
+                if (node.rect.Contains(point))
+                {
+                    foundNode = node;
+                }
+            }
+
+            return foundNode;
         }
     }
 }
