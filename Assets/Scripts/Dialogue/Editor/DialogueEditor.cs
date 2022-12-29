@@ -8,14 +8,11 @@ namespace RPG.Dialogue.Editor
     public class DialogueEditor : EditorWindow
     {
         private Dialogue selectedDialogue = null;
-        [NonSerialized]
-        private GUIStyle nodeStyle = null;
-        [NonSerialized]
-        private DialogueNode draggingNode = null;
-        [NonSerialized]
-        private Vector2 draggingOffset;
-        [NonSerialized]
-        private DialogueNode creatingNode = null;
+        [NonSerialized] private GUIStyle nodeStyle = null;
+        [NonSerialized] private DialogueNode draggingNode = null;
+        [NonSerialized] private Vector2 draggingOffset;
+        [NonSerialized] private DialogueNode creatingNode = null;
+        [NonSerialized] private DialogueNode deletingNode = null;
 
         [MenuItem("Window/Dialogue Editor")]
         public static void ShowEditorWindow()
@@ -71,6 +68,7 @@ namespace RPG.Dialogue.Editor
                 {
                     DrawConnections(node);
                 }
+
                 foreach (DialogueNode node in selectedDialogue.GetAllNodes())
                 {
                     DrawNode(node);
@@ -81,6 +79,13 @@ namespace RPG.Dialogue.Editor
                     Undo.RecordObject(selectedDialogue, "Added Dialogue Node");
                     selectedDialogue.CreateNode(creatingNode);
                     creatingNode = null;
+                }
+
+                if (deletingNode != null)
+                {
+                    Undo.RecordObject(selectedDialogue, "Removed Dialogue Node");
+                    selectedDialogue.DeleteNode(deletingNode);
+                    deletingNode = null;
                 }
             }
         }
@@ -122,13 +127,20 @@ namespace RPG.Dialogue.Editor
 
                 node.text = newText;
             }
+            
+            GUILayout.BeginHorizontal();
+
+            if (GUILayout.Button("x"))
+            {
+                deletingNode = node;
+            }
 
             if (GUILayout.Button("+"))
             {
                 creatingNode = node;
             }
 
-            
+            GUILayout.EndHorizontal();
 
             GUILayout.EndArea();
         }
