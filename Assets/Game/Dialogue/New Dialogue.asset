@@ -16,8 +16,8 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 621
-    y: 300
+    x: 1040
+    y: 142
     width: 200
     height: 100
 --- !u!114 &-579469550179856117
@@ -33,11 +33,12 @@ MonoBehaviour:
   m_Name: 729cdecf-14e0-4b53-ad73-b4cba161d3b2
   m_EditorClassIdentifier: 
   text: 
-  children: []
+  children:
+  - 50cafb06-18bc-46f9-8e58-ab4d88c8e8e2
   rect:
     serializedVersion: 2
-    x: 792
-    y: 76
+    x: 625
+    y: 367
     width: 200
     height: 100
 --- !u!114 &11400000
