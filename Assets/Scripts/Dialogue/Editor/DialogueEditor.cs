@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Callbacks;
-using UnityEditor.MPE;
 using UnityEngine;
 
 namespace RPG.Dialogue.Editor
@@ -109,6 +106,11 @@ namespace RPG.Dialogue.Editor
 
                 node.text = newText;
                 node.uniqueID = newUniqueID;
+            }
+
+            foreach (DialogueNode childNode in selectedDialogue.GetAllChildren(node))
+            {
+                EditorGUILayout.LabelField(childNode.text);
             }
 
             GUILayout.EndArea();
