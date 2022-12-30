@@ -19,6 +19,7 @@ namespace RPG.Dialogue
             nodeLookup.Clear();
             foreach (var node in GetAllNodes())
             {
+                Debug.Log(node);
                 nodeLookup[node.name] = node;
             }
         }
