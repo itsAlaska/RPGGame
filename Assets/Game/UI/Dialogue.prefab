@@ -423,7 +423,7 @@ MonoBehaviour:
     m_Left: 0
     m_Right: -8
     m_Top: -2
-    m_Bottom: -10
+    m_Bottom: -18
   m_ChildAlignment: 8
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
@@ -1048,7 +1048,7 @@ MonoBehaviour:
     m_Left: 18
     m_Right: 19
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 10
   m_ChildAlignment: 0
   m_Spacing: 5.72
   m_ChildForceExpandWidth: 1
@@ -1085,3 +1085,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AIText: {fileID: 5413405075551575274}
+  nextButton: {fileID: 1023870815012359425}
