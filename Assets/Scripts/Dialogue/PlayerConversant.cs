@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -21,6 +22,12 @@ namespace RPG.Dialogue
             }
 
             return currentNode.GetText();
+        }
+
+        public IEnumerable<string> GetChoices()
+        {
+            yield return "I am High King Butt!";
+            yield return "My butt withers in fear...";
         }
 
         public void Next()
