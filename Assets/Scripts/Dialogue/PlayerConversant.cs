@@ -12,12 +12,14 @@ namespace RPG.Dialogue
     {
         private Dialogue currentDialogue;
         private DialogueNode currentNode = null;
+        private AIConversant currentConversant = null;
         private bool isChoosing = false;
 
         public event Action onConversationUpdated;
 
-        public void StartDialogue(Dialogue newDialogue)
+        public void StartDialogue(AIConversant newConversant, Dialogue newDialogue)
         {
+            currentConversant = newConversant;
             currentDialogue = newDialogue;
             currentNode = currentDialogue.GetRootNode();
             TriggerEnterAction();
@@ -30,6 +32,7 @@ namespace RPG.Dialogue
             TriggerExitAction();
             currentNode = null;
             isChoosing = false;
+            currentConversant = null;
             onConversationUpdated();
         }
 
@@ -76,7 +79,7 @@ namespace RPG.Dialogue
                 onConversationUpdated();
                 return;
             }
-            
+
             DialogueNode[] children = currentDialogue.GetAIChildren(currentNode).ToArray();
             int randomIndex = Random.Range(0, children.Length);
             TriggerExitAction();
@@ -92,19 +95,28 @@ namespace RPG.Dialogue
 
         void TriggerEnterAction()
         {
-            if (currentNode != null && currentNode.GetOnEnterAction() != "")
+            if (currentNode != null)
             {
-                Debug.Log(currentNode.GetOnEnterAction());
+                TriggerAction(currentNode.GetOnEnterAction());
             }
         }
 
         void TriggerExitAction()
         {
-            if (currentNode != null && currentNode.GetOnExitAction() != "")
+            if (currentNode != null)
             {
-                Debug.Log(currentNode.GetOnExitAction());
+                TriggerAction(currentNode.GetOnExitAction());
+            }
+        }
+
+        void TriggerAction(string action)
+        {
+            if (action == "") return;
+
+            foreach (var trigger in currentConversant.GetComponents<DialogueTrigger>())
+            {
+                trigger.Trigger(action);
             }
         }
     }
 }
-
