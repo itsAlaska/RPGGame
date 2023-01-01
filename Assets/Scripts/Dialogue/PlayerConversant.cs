@@ -20,12 +20,14 @@ namespace RPG.Dialogue
         {
             currentDialogue = newDialogue;
             currentNode = currentDialogue.GetRootNode();
+            TriggerEnterAction();
             onConversationUpdated();
         }
 
         public void Quit()
         {
             currentDialogue = null;
+            TriggerExitAction();
             currentNode = null;
             isChoosing = false;
             onConversationUpdated();
@@ -59,6 +61,7 @@ namespace RPG.Dialogue
         public void SelectChoice(DialogueNode chosenNode)
         {
             currentNode = chosenNode;
+            TriggerEnterAction();
             isChoosing = false;
             Next();
         }
@@ -69,19 +72,38 @@ namespace RPG.Dialogue
             if (numPlayerResponses > 0)
             {
                 isChoosing = true;
+                TriggerExitAction();
                 onConversationUpdated();
                 return;
             }
             
             DialogueNode[] children = currentDialogue.GetAIChildren(currentNode).ToArray();
             int randomIndex = Random.Range(0, children.Length);
+            TriggerExitAction();
             currentNode = children[randomIndex];
+            TriggerEnterAction();
             onConversationUpdated();
         }
 
         public bool HasNext()
         {
             return currentDialogue.GetAllChildren(currentNode).Any();
+        }
+
+        void TriggerEnterAction()
+        {
+            if (currentNode != null && currentNode.GetOnEnterAction() != "")
+            {
+                Debug.Log(currentNode.GetOnEnterAction());
+            }
+        }
+
+        void TriggerExitAction()
+        {
+            if (currentNode != null && currentNode.GetOnExitAction() != "")
+            {
+                Debug.Log(currentNode.GetOnExitAction());
+            }
         }
     }
 }
