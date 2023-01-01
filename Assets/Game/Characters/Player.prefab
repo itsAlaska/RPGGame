@@ -375,7 +375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ae6e74d22e4a348a9d6e04b177075f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testDialogue: {fileID: 11400000, guid: 9ccba233c9e062049841964e4fb555c4, type: 2}
 --- !u!114 &2788905332297018075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,11 +437,14 @@ MonoBehaviour:
   - type: 3
     texture: {fileID: 2800000, guid: e4fac5245b727db42ba0ca0258851b83, type: 3}
     hotspot: {x: 0, y: 0}
+  - type: 4
+    texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
+    hotspot: {x: 0, y: 0}
   - type: 5
     texture: {fileID: 2800000, guid: 2a2b4775272c890448e1bd6239fdfc84, type: 3}
     hotspot: {x: 0, y: 0}
-  - type: 4
-    texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
+  - type: 6
+    texture: {fileID: 2800000, guid: 96d4bfdb0d6d8c042bf8fccf6524d239, type: 3}
     hotspot: {x: 0, y: 0}
   maxNavMeshProjectionDistance: 1
   rayCastRadius: 1
