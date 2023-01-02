@@ -7,7 +7,6 @@ namespace RPG.UI.Quests
 {
     public class QuestListUI : MonoBehaviour
     {
-        [SerializeField] private Quest[] tempQuests;
         [SerializeField] private QuestItemUI questPrefab;
     
         void Start()
@@ -16,11 +15,13 @@ namespace RPG.UI.Quests
             {
                 Destroy(child.gameObject);
             }
+
+            QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
     
-            foreach (Quest quest in tempQuests)
+            foreach (QuestStatus status in questList.GetStatuses())
             {
-                QuestItemUI questDisplay = Instantiate(questPrefab, transform);
-                questDisplay.Setup(quest);
+                QuestItemUI uiInstance = Instantiate(questPrefab, transform);
+                uiInstance.Setup(status);
             }
         }
     }

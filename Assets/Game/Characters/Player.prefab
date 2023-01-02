@@ -489,6 +489,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 80
+--- !u!114 &661888595612801941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5221760887275590416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ce0ed04f5be6b489832945de6f9c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statuses:
+  - quest: {fileID: 11400000, guid: 02323896eb3044641b16628bc250bb9d, type: 2}
+    completedObjectives:
+    - Find first butt
+    - Find second butt
+  - quest: {fileID: 11400000, guid: 758c25a8a5b3ba741afc394924ebdddf, type: 2}
+    completedObjectives:
+    - Locate Mother's butt
 --- !u!4 &5221760887275590447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3306555947678058778, guid: 5d926a974958679468dfef0c622af9c7, type: 3}
