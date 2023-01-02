@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace RPG.Quests
@@ -17,6 +18,11 @@ namespace RPG.Quests
         public int GetObjectiveCount()
         {
             return objectives.Length;
+        }
+
+        public IEnumerable<string> GetObjectives()
+        {
+            return objectives;
         }
     }
 }

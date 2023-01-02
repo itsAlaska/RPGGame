@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using RPG.Quests;
 using UnityEngine;
 
-public class QuestListUI : MonoBehaviour
+namespace RPG.UI.Quests
 {
-    [SerializeField] private Quest[] tempQuests;
-    [SerializeField] private QuestItemUI questPrefab;
-
-    void Start()
+    public class QuestListUI : MonoBehaviour
     {
-        foreach (Transform child in transform)
+        [SerializeField] private Quest[] tempQuests;
+        [SerializeField] private QuestItemUI questPrefab;
+    
+        void Start()
         {
-            Destroy(child.gameObject);
-        }
-
-        foreach (Quest quest in tempQuests)
-        {
-            QuestItemUI questDisplay = Instantiate(questPrefab, transform);
-            questDisplay.Setup(quest);
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+    
+            foreach (Quest quest in tempQuests)
+            {
+                QuestItemUI questDisplay = Instantiate(questPrefab, transform);
+                questDisplay.Setup(quest);
+            }
         }
     }
 }

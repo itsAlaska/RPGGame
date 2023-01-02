@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Find the missing butt
   m_EditorClassIdentifier: 
   objectives:
-  - 
-  - 
-  - 
+  - Find first butt
+  - Find second butt
+  - Find third butt

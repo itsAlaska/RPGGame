@@ -4,14 +4,26 @@ using RPG.Quests;
 using TMPro;
 using UnityEngine;
 
-public class QuestItemUI : MonoBehaviour
+namespace RPG.UI.Quests
 {
-    [SerializeField] private TextMeshProUGUI title;
-    [SerializeField] private TextMeshProUGUI progress;
-    
-    public void Setup(Quest quest)
+    public class QuestItemUI : MonoBehaviour
     {
-        title.text = quest.GetTitle();
-        progress.text = $"0/{quest.GetObjectiveCount()}";
+        [SerializeField] private TextMeshProUGUI title;
+        [SerializeField] private TextMeshProUGUI progress;
+
+        private Quest currentQuest;
+        
+        public void Setup(Quest quest)
+        {
+            currentQuest = quest;
+            title.text = quest.GetTitle();
+            progress.text = $"0/{quest.GetObjectiveCount()}";
+        }
+
+        public Quest GetQuest()
+        {
+            return currentQuest;
+        }
     }
 }
+
