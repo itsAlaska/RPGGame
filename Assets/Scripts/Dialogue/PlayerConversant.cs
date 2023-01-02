@@ -10,6 +10,8 @@ namespace RPG.Dialogue
 {
     public class PlayerConversant : MonoBehaviour
     {
+        [SerializeField] private string playerName;
+
         private Dialogue currentDialogue;
         private DialogueNode currentNode = null;
         private AIConversant currentConversant = null;
@@ -54,6 +56,18 @@ namespace RPG.Dialogue
             }
 
             return currentNode.GetText();
+        }
+
+        public string GetCurrentConversantName()
+        {
+            if (isChoosing)
+            {
+                return playerName;
+            }
+            else
+            {
+                return currentConversant.GetName();
+            }
         }
 
         public IEnumerable<DialogueNode> GetChoices()

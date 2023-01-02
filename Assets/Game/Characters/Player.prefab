@@ -375,6 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ae6e74d22e4a348a9d6e04b177075f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: Mysterious Buttraveler
 --- !u!114 &2788905332297018075
 MonoBehaviour:
   m_ObjectHideFlags: 0
