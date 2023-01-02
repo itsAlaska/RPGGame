@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: Mother's Butt
   m_EditorClassIdentifier: 
   objectives:
-  - Locate Mother's butt
-  - Add shine to mother's butt
+  - reference: 1
+    description: Find Mother's butt.
+  - reference: 2
+    description: Add shine to Mother's butt.
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: cf79e8f939c1ad345baf735f05e676de, type: 2}
