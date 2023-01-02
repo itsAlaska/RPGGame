@@ -15,8 +15,8 @@ MonoBehaviour:
   objectives:
   - reference: 1
     description: Find Mother's butt.
-  - reference: 2
-    description: Add shine to Mother's butt.
   rewards:
-  - number: 1
+  - number: 2
     item: {fileID: 11400000, guid: cf79e8f939c1ad345baf735f05e676de, type: 2}
+  - number: 3
+    item: {fileID: 11400000, guid: fd6c2828445b0634d867d535dde4a473, type: 2}

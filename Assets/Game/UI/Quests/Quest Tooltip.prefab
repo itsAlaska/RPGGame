@@ -277,6 +277,7 @@ MonoBehaviour:
   objectiveContainer: {fileID: 5647471889157959040}
   objectivePrefab: {fileID: 8805464334907196965, guid: e8ed0a6d37efea146ba6503c88eb4203, type: 3}
   objectiveIncompletePrefab: {fileID: 5030611613939464645, guid: 48ff1aadd4486a946bbb8e731f797df7, type: 3}
+  rewardText: {fileID: 4386068294992840039}
 --- !u!1 &5325531711806527354
 GameObject:
   m_ObjectHideFlags: 0
