@@ -1,0 +1,219 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5844239550720095675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: d2a063ed-da33-4973-9206-af4b3e4b3121
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh, jeez... I really don't know what I'm going to do...
+  children:
+  - a2e5db89-8935-421e-8b2f-51f889b7beb1
+  - 4dede708-d961-4b38-941e-bc3cbab70ca4
+  rect:
+    serializedVersion: 2
+    x: 57
+    y: 292
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-1762658739723217280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: a2e5db89-8935-421e-8b2f-51f889b7beb1
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: <i>Nope, I'm good... Just keep walking...</i>
+  children:
+  - 5e91ca81-52f0-4338-933e-5d02a9409815
+  rect:
+    serializedVersion: 2
+    x: 410
+    y: 183
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-1610034779513933824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 5e91ca81-52f0-4338-933e-5d02a9409815
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: <i>Weeps loudly into his helm...</i>
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 655
+    y: 168
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-1267577186245598865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: d78b25f0-cbc5-4c17-83f7-f3a3cea99e3e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh! Thank you so much!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1187
+    y: 381
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveQuest
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea233725a296c05499cfe6f735ca1ea9, type: 3}
+  m_Name: Mother's Butt
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -5844239550720095675}
+  - {fileID: -1762658739723217280}
+  - {fileID: 8282687441614235950}
+  - {fileID: 3335964656618115688}
+  - {fileID: 6071562897335091408}
+  - {fileID: 5974039394095187539}
+  - {fileID: -1267577186245598865}
+  - {fileID: -1610034779513933824}
+  newNodeOffset: {x: 200, y: 0}
+--- !u!114 &3335964656618115688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 9438cbb9-9b5e-4bac-bbdb-4ba22c529594
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh! I didn't see you there, mysterious buttraveler... Yes.. I'm very troubled
+    indeed... My mother, you see, her butt is not only missing, but it's also lost
+    it's luster! I would go find it and shine it up myself, but I cannot leave my
+    post! Oh... What will I do??
+  children:
+  - fe6e6b44-e323-4cab-a130-9b758871e8dc
+  - b75dbf12-af28-4bf0-80a6-ef645d97bfc5
+  rect:
+    serializedVersion: 2
+    x: 655
+    y: 406
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &5974039394095187539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: b75dbf12-af28-4bf0-80a6-ef645d97bfc5
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Worry not, sir guard of Behindington! I will help!
+  children:
+  - d78b25f0-cbc5-4c17-83f7-f3a3cea99e3e
+  rect:
+    serializedVersion: 2
+    x: 901
+    y: 493
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &6071562897335091408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: fe6e6b44-e323-4cab-a130-9b758871e8dc
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: <i>Definitely nope. I'm out. </i>
+  children:
+  - 5e91ca81-52f0-4338-933e-5d02a9409815
+  rect:
+    serializedVersion: 2
+    x: 918
+    y: 277
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &8282687441614235950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 4dede708-d961-4b38-941e-bc3cbab70ca4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: 'You look pretty troubled there... '
+  children:
+  - 9438cbb9-9b5e-4bac-bbdb-4ba22c529594
+  rect:
+    serializedVersion: 2
+    x: 422
+    y: 371
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
