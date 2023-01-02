@@ -170,7 +170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.21, y: 10}
+  m_AnchoredPosition: {x: -55, y: 33}
   m_SizeDelta: {x: 85.5801, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1734118867579226950
@@ -497,9 +497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095c9b50e01581243a33c07abe45f0c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempQuests:
-  - {fileID: 11400000, guid: 02323896eb3044641b16628bc250bb9d, type: 2}
-  - {fileID: 11400000, guid: 758c25a8a5b3ba741afc394924ebdddf, type: 2}
   questPrefab: {fileID: 8113302169277262784, guid: 4319b82fa476b3e42b6b1076946dfdb5, type: 3}
 --- !u!1 &3909221736348570035
 GameObject:

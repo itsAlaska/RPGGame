@@ -9,9 +9,23 @@ namespace RPG.Quests
         private Quest quest;
         private List<string> completedObjectives = new List<string>();
 
+        [System.Serializable]
+        class QuestStatusRecord
+        {
+            public string questName;
+            public List<string> completedObjectives;
+        }
+
         public QuestStatus(Quest quest1)
         {
             quest = quest1;
+        }
+
+        public QuestStatus(object objectState)
+        {
+            QuestStatusRecord state = objectState as QuestStatusRecord;
+            quest = Quest.GetByName(state.questName);
+            completedObjectives = state.completedObjectives;
         }
 
         public Quest GetQuest()
@@ -35,6 +49,14 @@ namespace RPG.Quests
             {
                 completedObjectives.Add(objective);
             }
+        }
+
+        public object CaptureState()
+        {
+            QuestStatusRecord state = new QuestStatusRecord();
+            state.questName = quest.name;
+            state.completedObjectives = completedObjectives;
+            return state;
         }
     }
 }
