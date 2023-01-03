@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using RPG.Core;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -72,7 +73,7 @@ namespace RPG.Dialogue
 
         public IEnumerable<DialogueNode> GetChoices()
         {
-            return currentDialogue.GetPlayerChildren(currentNode);
+            return FilterOnCondition(currentDialogue.GetPlayerChildren(currentNode));
         }
 
         public void SelectChoice(DialogueNode chosenNode)
@@ -85,7 +86,7 @@ namespace RPG.Dialogue
 
         public void Next()
         {
-            int numPlayerResponses = currentDialogue.GetPlayerChildren(currentNode).Count();
+            int numPlayerResponses = FilterOnCondition(currentDialogue.GetPlayerChildren(currentNode)).Count();
             if (numPlayerResponses > 0)
             {
                 isChoosing = true;
@@ -94,7 +95,7 @@ namespace RPG.Dialogue
                 return;
             }
 
-            DialogueNode[] children = currentDialogue.GetAIChildren(currentNode).ToArray();
+            DialogueNode[] children = FilterOnCondition(currentDialogue.GetAIChildren(currentNode)).ToArray();
             int randomIndex = Random.Range(0, children.Length);
             TriggerExitAction();
             currentNode = children[randomIndex];
@@ -104,7 +105,23 @@ namespace RPG.Dialogue
 
         public bool HasNext()
         {
-            return currentDialogue.GetAllChildren(currentNode).Any();
+            return FilterOnCondition(currentDialogue.GetAllChildren(currentNode)).Any();
+        }
+
+        private IEnumerable<DialogueNode> FilterOnCondition(IEnumerable<DialogueNode> inputNode)
+        {
+            foreach (var node in inputNode)
+            {
+                if (node.CheckCondition(GetEvaluators()))
+                {
+                    yield return node;
+                }
+            }
+        }
+
+        private IEnumerable<IPredicateEvaluator> GetEvaluators()
+        {
+            return GetComponents<IPredicateEvaluator>();
         }
 
         void TriggerEnterAction()

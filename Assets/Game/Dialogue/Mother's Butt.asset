@@ -17,14 +17,18 @@ MonoBehaviour:
   children:
   - a2e5db89-8935-421e-8b2f-51f889b7beb1
   - 4dede708-d961-4b38-941e-bc3cbab70ca4
+  - 72573e5f-eeb9-4ae2-9565-ab22797f6200
   rect:
     serializedVersion: 2
-    x: 57
-    y: 292
+    x: 56
+    y: 294
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &-1762658739723217280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,6 +53,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &-1610034779513933824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,6 +79,37 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &-1473006343324099380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 72573e5f-eeb9-4ae2-9565-ab22797f6200
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I <i>said</i> I'd find and shine that butt of your Mother's!
+  children:
+  - aefd3add-9982-4542-940d-60802c1572aa
+  rect:
+    serializedVersion: 2
+    x: 320
+    y: 507
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    predicate: HasQuest
+    parameters:
+    - Mother's Butt
 --- !u!114 &-1267577186245598865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +133,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: GiveQuest
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +157,8 @@ MonoBehaviour:
   - {fileID: 5974039394095187539}
   - {fileID: -1267577186245598865}
   - {fileID: -1610034779513933824}
+  - {fileID: -1473006343324099380}
+  - {fileID: 9048953019240568678}
   newNodeOffset: {x: 200, y: 0}
 --- !u!114 &3335964656618115688
 MonoBehaviour:
@@ -145,6 +188,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &5974039394095187539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +215,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &6071562897335091408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +242,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &8282687441614235950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,3 +269,32 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &9048953019240568678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: aefd3add-9982-4542-940d-60802c1572aa
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh... Right....
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 594
+    y: 564
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
