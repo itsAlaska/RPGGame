@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8818207299735415385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 72c61267-0500-4e09-90f6-b0db0294fcad
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I have your Mother's Butt!
+  children:
+  - 7d11cdb1-b62e-4d78-9c3a-d20ed5f7880a
+  rect:
+    serializedVersion: 2
+    x: 321
+    y: 649
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    predicate: HasInventoryItem
+    parameters:
+    - 95120837-d1e2-4912-8511-3a4c0f946cd4
 --- !u!114 &-5844239550720095675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,10 +46,37 @@ MonoBehaviour:
   - a2e5db89-8935-421e-8b2f-51f889b7beb1
   - 4dede708-d961-4b38-941e-bc3cbab70ca4
   - 72573e5f-eeb9-4ae2-9565-ab22797f6200
+  - 72c61267-0500-4e09-90f6-b0db0294fcad
   rect:
     serializedVersion: 2
     x: 56
     y: 294
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &-4041898374114573580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 7d11cdb1-b62e-4d78-9c3a-d20ed5f7880a
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh thank you, buttraveler!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 643
+    y: 694
     width: 200
     height: 100
   onEnterAction: 
@@ -159,6 +214,8 @@ MonoBehaviour:
   - {fileID: -1610034779513933824}
   - {fileID: -1473006343324099380}
   - {fileID: 9048953019240568678}
+  - {fileID: -8818207299735415385}
+  - {fileID: -4041898374114573580}
   newNodeOffset: {x: 200, y: 0}
 --- !u!114 &3335964656618115688
 MonoBehaviour:
