@@ -25,9 +25,21 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: HasInventoryItem
-    parameters:
-    - 95120837-d1e2-4912-8511-3a4c0f946cd4
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Mother's Butt
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Mother's Butt
+        negate: 0
+      - predicate: HasInventoryItem
+        parameters:
+        - 95120837-d1e2-4912-8511-3a4c0f946cd4
+        negate: 0
 --- !u!114 &-5844239550720095675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,8 +68,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &-4041898374114573580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,8 +93,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &-1762658739723217280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,8 +119,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &-1610034779513933824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +144,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &-1473006343324099380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,9 +170,17 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: HasQuest
-    parameters:
-    - Mother's Butt
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Mother's Butt
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Mother's Butt
+        negate: 1
 --- !u!114 &-1267577186245598865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,8 +205,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: GiveQuest
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,8 +261,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &5974039394095187539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,8 +287,12 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Mother's Butt
+        negate: 1
 --- !u!114 &6071562897335091408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,8 +318,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &8282687441614235950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,8 +344,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &9048953019240568678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,5 +369,4 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []

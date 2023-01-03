@@ -7,24 +7,62 @@ namespace RPG.Core
     [System.Serializable]
     public class Condition
     {
-        [SerializeField] private string predicate;
-        [SerializeField] private string[] parameters;
+        [SerializeField] private Disjunction[] and;
 
         public bool Check(IEnumerable<IPredicateEvaluator> evaluators)
         {
-            foreach (var evaluator in evaluators)
+            foreach (var dis in and)
             {
-                bool? result = evaluator.Evaluate(predicate, parameters);
-                if (result == null)
+                if (!dis.Check(evaluators))
                 {
-                    continue;
+                    return false;
                 }
-
-                if (result == false) return false;
             }
 
             return true;
         }
+
+        [System.Serializable]
+        class Disjunction
+        {
+            [SerializeField] private Predicate[] or;
+
+            public bool Check(IEnumerable<IPredicateEvaluator> evaluators)
+            {
+                foreach (var pred in or)
+                {
+                    if (pred.Check(evaluators))
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        }
+
+        [System.Serializable]
+        class Predicate
+        {
+            [SerializeField] private string predicate;
+            [SerializeField] private string[] parameters;
+            [SerializeField] private bool negate = false;
+            
+            public bool Check(IEnumerable<IPredicateEvaluator> evaluators)
+            {
+                foreach (var evaluator in evaluators)
+                {
+                    bool? result = evaluator.Evaluate(predicate, parameters);
+                    if (result == null)
+                    {
+                        continue;
+                    }
+
+                    if (result == negate) return false;
+                }
+
+                return true;
+            }
+        }
     }
 }
-
