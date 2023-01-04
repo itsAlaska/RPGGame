@@ -8,6 +8,7 @@ namespace RPG.Shops
 {
     public class Shop : MonoBehaviour, IRaycastable
     {
+        [SerializeField] private string shopName = null;
         public class ShopItem
         {
             private InventoryItem item;
@@ -62,6 +63,11 @@ namespace RPG.Shops
         public void AddToTransaction(InventoryItem item, int quantity)
         {
             
+        }
+
+        public string GetShopName()
+        {
+            return shopName;
         }
 
         public CursorType GetCursorType()
