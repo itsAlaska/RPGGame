@@ -7,10 +7,11 @@ public class HoverButtonColorchanger : MonoBehaviour
 {
     [SerializeField] private Image background;
     [SerializeField] private Color startingColor;
+    [SerializeField] private Color hoverColor;
 
     public void HoverOverButtonColor()
     {
-        background.color = new Color(.9f, .88f, .8f);
+        background.color = hoverColor;
     }
 
     public void OriginalColor()

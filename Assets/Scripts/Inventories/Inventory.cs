@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using RPG.Core;
 using RPG.Saving;
 using UnityEngine;
@@ -33,6 +34,25 @@ namespace RPG.Inventories
         {
             var player = GameObject.FindWithTag("Player");
             return player.GetComponent<Inventory>();
+        }
+
+        /// <summary>
+        /// Find the slot number for the specific item you're looking for
+        /// </summary>
+        /// <param name="item">The specific item you're looking for.</param>
+        /// <returns>The index of the item.</returns>
+        public int FindSlotContainingItem(InventoryItem item)
+        {
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (object.ReferenceEquals(slots[i].item, item))
+                {
+                    Debug.Log($"In FindSlotContainingItem, at index {i}");
+                    return i;
+                }
+            }
+
+            return -1;
         }
 
         /// <summary>
@@ -164,7 +184,7 @@ namespace RPG.Inventories
         /// Find a slot that can accomodate the given item.
         /// </summary>
         /// <returns>-1 if no slot is found.</returns>
-        int FindSlot(InventoryItem item)
+        public int FindSlot(InventoryItem item)
         {
             int i = FindStack(item);
             if (i < 0)

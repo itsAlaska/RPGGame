@@ -13,21 +13,29 @@ namespace RPG.Inventories
     /// 'EquipableItem'.
     /// </remarks>
     [CreateAssetMenu(menuName = ("Inventory/Item"))]
-    public abstract class InventoryItem : ScriptableObject, ISerializationCallbackReceiver
+    public class InventoryItem : ScriptableObject, ISerializationCallbackReceiver
     {
         [Tooltip("Auto-generated UUID for saving/loading. Clear this field if you want to generate a new one.")]
-        [SerializeField] string itemID = null;
-        [Tooltip("Item name to be displayed in UI.")]
-        [SerializeField] string displayName = null;
-        [Tooltip("Item description to be displayed in UI.")]
-        [SerializeField][TextArea] string description = null;
-        [Tooltip("The UI icon to represent this item in the inventory.")]
-        [SerializeField] Sprite icon = null;
+        [SerializeField]
+        string itemID = null;
+
+        [Tooltip("Item name to be displayed in UI.")] [SerializeField]
+        string displayName = null;
+
+        [Tooltip("Item description to be displayed in UI.")] [SerializeField] [TextArea]
+        string description = null;
+
+        [Tooltip("The UI icon to represent this item in the inventory.")] [SerializeField]
+        Sprite icon = null;
 
         [Tooltip("The prefab that should be spawned when this item is dropped.")] [SerializeField]
         private Pickup pickup = null;
-        [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
-        [SerializeField] bool stackable = false;
+
+        [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")] [SerializeField]
+        bool stackable = false;
+
+        [Tooltip("Temporary spot for checking if an item is part of a quest.")] [SerializeField]
+        private bool isQuestItem = false;
 
         static Dictionary<string, InventoryItem> itemLookupCache;
 
@@ -51,7 +59,9 @@ namespace RPG.Inventories
                     Debug.Log(item.displayName);
                     if (itemLookupCache.ContainsKey(item.itemID))
                     {
-                        Debug.LogError(string.Format("Looks like there's a duplicate GameDevTV.UI.InventorySystem ID for objects: {0} and {1}", itemLookupCache[item.itemID], item));
+                        Debug.LogError(string.Format(
+                            "Looks like there's a duplicate GameDevTV.UI.InventorySystem ID for objects: {0} and {1}",
+                            itemLookupCache[item.itemID], item));
                         continue;
                     }
 
@@ -76,7 +86,7 @@ namespace RPG.Inventories
             pickup.Setup(this, number);
             return pickup;
         }
-        
+
         public Sprite GetIcon()
         {
             return icon;
@@ -102,6 +112,11 @@ namespace RPG.Inventories
             return description;
         }
 
+        public bool GetIsQuestItem()
+        {
+            return isQuestItem;
+        }
+
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
             if (string.IsNullOrWhiteSpace(itemID))
@@ -112,7 +127,6 @@ namespace RPG.Inventories
 
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
-            
         }
     }
 }

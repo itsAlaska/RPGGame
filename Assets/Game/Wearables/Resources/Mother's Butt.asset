@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266d57158ec889a40969549bc36eb76d, type: 3}
+  m_Script: {fileID: 11500000, guid: ac68a2f61b0c7c745849eb0f3c1877f7, type: 3}
   m_Name: Mother's Butt
   m_EditorClassIdentifier: 
-  itemID: 95120837-d1e2-4912-8511-3a4c0f946cd4
+  itemID: 47bda7a8-bec5-42d0-aff1-fddb57d4f272
   displayName: Mother's Butt
   description: The guard's Mother's butt!
   icon: {fileID: 21300000, guid: b25e0c611f4da934ab539fca49853592, type: 3}
   pickup: {fileID: 5402853316129546468, guid: 34cb2ae5aac06824b893c3edb446dcec, type: 3}
   stackable: 0
-  allowedEquipLocation: 3
-  additiveModifiers: []
-  percentageModifiers: []
+  isQuestItem: 1

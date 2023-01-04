@@ -18,12 +18,12 @@ MonoBehaviour:
   - 7d11cdb1-b62e-4d78-9c3a-d20ed5f7880a
   rect:
     serializedVersion: 2
-    x: 321
+    x: 322
     y: 649
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: 
+  onExitAction: GiveReward
   condition:
     and:
     - or:
@@ -38,7 +38,7 @@ MonoBehaviour:
         negate: 0
       - predicate: HasInventoryItem
         parameters:
-        - 95120837-d1e2-4912-8511-3a4c0f946cd4
+        - 47bda7a8-bec5-42d0-aff1-fddb57d4f272
         negate: 0
 --- !u!114 &-5844239550720095675
 MonoBehaviour:
@@ -119,7 +119,12 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    and: []
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Mother's Butt
+        negate: 1
 --- !u!114 &-1610034779513933824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +185,10 @@ MonoBehaviour:
       - predicate: CompletedQuest
         parameters:
         - Mother's Butt
+        negate: 1
+      - predicate: HasInventoryItem
+        parameters:
+        - 47bda7a8-bec5-42d0-aff1-fddb57d4f272
         negate: 1
 --- !u!114 &-1267577186245598865
 MonoBehaviour:
@@ -344,7 +353,12 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    and: []
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Mother's Butt
+        negate: 1
 --- !u!114 &9048953019240568678
 MonoBehaviour:
   m_ObjectHideFlags: 0
