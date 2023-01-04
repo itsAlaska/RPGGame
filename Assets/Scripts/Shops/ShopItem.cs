@@ -1,4 +1,6 @@
+using System.Globalization;
 using RPG.Inventories;
+using UnityEngine;
 
 namespace RPG.Shops
 {
@@ -15,6 +17,31 @@ namespace RPG.Shops
             this.availability = availability;
             this.price = price;
             this.quantityInTransaction = quantityInTransaction;
+        }
+
+        public string GetName()
+        {
+            return item.GetDisplayName();
+        }
+
+        public Sprite GetIcon()
+        {
+            return item.GetIcon();
+        }
+
+        public int GetAvailability()
+        {
+            return availability;
+        }
+        
+        public float GetPrice()
+        {
+            return price;
+        }
+        
+        public int GetQuantity()
+        {
+            return quantityInTransaction;
         }
     }
 }
