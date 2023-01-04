@@ -501,6 +501,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 80
+--- !u!114 &1734272178760368835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5221760887275590416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250ab901d41c2ea48967d0b136278391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5221760887275590447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3306555947678058778, guid: 5d926a974958679468dfef0c622af9c7, type: 3}

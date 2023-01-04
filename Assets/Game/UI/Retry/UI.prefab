@@ -3573,6 +3573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3671915787029451516, guid: 6fb5f25ec5cfa61409e8d4abbe220d62, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3852047751137359733, guid: 6fb5f25ec5cfa61409e8d4abbe220d62, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
