@@ -18,6 +18,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 78c4c29502beeec4984d5fcd0cb715d9, type: 3}
   pickup: {fileID: 1399941511217759795, guid: 77703a4bdd9637645bc6f6054d259e1e, type: 3}
   stackable: 0
+  isQuestItem: 0
+  price: 100
   allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: b7301fa1a5689fd469d045ca421151a9, type: 2}
   equippedPrefab: {fileID: 6323058416716212687, guid: f4387bfbc34a45241a9d6add455b6714, type: 3}

@@ -19,3 +19,4 @@ MonoBehaviour:
   pickup: {fileID: 5402853316129546468, guid: 34cb2ae5aac06824b893c3edb446dcec, type: 3}
   stackable: 0
   isQuestItem: 1
+  price: 69

@@ -37,6 +37,9 @@ namespace RPG.Inventories
         [Tooltip("Temporary spot for checking if an item is part of a quest.")] [SerializeField]
         private bool isQuestItem = false;
 
+        [Tooltip("The price of this item, if it is sellable / buyable.")] [SerializeField]
+        float price = 0;
+
         static Dictionary<string, InventoryItem> itemLookupCache;
 
         /// <summary>
@@ -115,6 +118,11 @@ namespace RPG.Inventories
         public bool GetIsQuestItem()
         {
             return isQuestItem;
+        }
+
+        public float GetPrice()
+        {
+            return price;
         }
 
         void ISerializationCallbackReceiver.OnBeforeSerialize()
