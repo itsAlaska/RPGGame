@@ -2922,6 +2922,7 @@ MonoBehaviour:
   title: {fileID: 4562837200948845835}
   listRoot: {fileID: 8128349434461400151}
   rowPrefab: {fileID: 8303814803907994486, guid: f83e3b0b247c62a48a273c37ca833823, type: 3}
+  totalField: {fileID: 8342304418806441644}
 --- !u!224 &6149153033522242087 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1516445503393336539, guid: c65b6e024c7afbc478c654b1d2393cbf, type: 3}

@@ -452,28 +452,28 @@ MonoBehaviour:
   cursorMappings:
   - type: 0
     texture: {fileID: 2800000, guid: 21628736160fcc9488493401da3ef621, type: 3}
-    hotspot: {x: 10, y: 5}
+    hotspot: {x: 6, y: 4}
   - type: 1
     texture: {fileID: 2800000, guid: 8ea795c067613354898068091ffc7130, type: 3}
     hotspot: {x: 10, y: 5}
   - type: 2
     texture: {fileID: 2800000, guid: 2d18e23e3ce249b4489b8bcdd02d3f48, type: 3}
-    hotspot: {x: 10, y: 5}
+    hotspot: {x: 6, y: 4}
   - type: 3
     texture: {fileID: 2800000, guid: e4fac5245b727db42ba0ca0258851b83, type: 3}
-    hotspot: {x: 10, y: 5}
+    hotspot: {x: 6, y: 4}
   - type: 4
     texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
-    hotspot: {x: 10, y: 5}
+    hotspot: {x: 6, y: 4}
   - type: 5
     texture: {fileID: 2800000, guid: 2a2b4775272c890448e1bd6239fdfc84, type: 3}
     hotspot: {x: 10, y: 5}
   - type: 6
     texture: {fileID: 2800000, guid: 96d4bfdb0d6d8c042bf8fccf6524d239, type: 3}
-    hotspot: {x: 10, y: 5}
+    hotspot: {x: 6, y: 4}
   - type: 7
     texture: {fileID: 2800000, guid: 7c487959e49b9e447a29431caf3fdc77, type: 3}
-    hotspot: {x: 10, y: 5}
+    hotspot: {x: 6, y: 4}
   maxNavMeshProjectionDistance: 1
   rayCastRadius: 1
 --- !u!114 &6991534629963710895

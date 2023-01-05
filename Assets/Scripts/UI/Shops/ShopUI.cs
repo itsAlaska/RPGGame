@@ -9,7 +9,7 @@ namespace RPG.UI.Shops
         [SerializeField] private TextMeshProUGUI title = null;
         [SerializeField] private Transform listRoot;
         [SerializeField] private RowUI rowPrefab;
-        
+        [SerializeField] private TextMeshProUGUI totalField;
 
         private Shopper shopper = null;
         private Shop currentShop = null;
@@ -55,6 +55,8 @@ namespace RPG.UI.Shops
 
                 row.Setup(currentShop, item);
             }
+
+            totalField.text = $"Total: ${currentShop.TransactionTotal():N2}";
         }
 
         public void Close()

@@ -31,11 +31,15 @@ namespace RPG.Shops
 
         public IEnumerable<ShopItem> GetFilteredItems()
         {
+            return GetAllItems();
+        }
+
+        public IEnumerable<ShopItem> GetAllItems()
+        {
             foreach (StockItemConfig config in stockConfig)
             {
                 float adjustedPrice = config.item.GetPrice() * (1 - config.buyingDiscountPercentage / 100);
-                int quantityInTransaction = 0;
-                transaction.TryGetValue(config.item, out quantityInTransaction);
+                transaction.TryGetValue(config.item, out var quantityInTransaction);
                 yield return new ShopItem(config.item, config.initialStock, adjustedPrice, quantityInTransaction);
             }
         }
@@ -85,7 +89,13 @@ namespace RPG.Shops
 
         public float TransactionTotal()
         {
-            return 0;
+            float total = 0;
+            foreach (var item in GetAllItems())
+            {
+                total += item.GetPrice() * item.GetQuantityInTransaction();
+            }
+
+            return total;
         }
 
         public void AddToTransaction(InventoryItem item, int quantity)
