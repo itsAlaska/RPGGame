@@ -388,6 +388,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Mysterious Buttraveler
+--- !u!114 &1734272178760368835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5221760887275590416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250ab901d41c2ea48967d0b136278391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2788905332297018075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,25 +452,28 @@ MonoBehaviour:
   cursorMappings:
   - type: 0
     texture: {fileID: 2800000, guid: 21628736160fcc9488493401da3ef621, type: 3}
-    hotspot: {x: 0, y: 0}
+    hotspot: {x: 10, y: 5}
   - type: 1
     texture: {fileID: 2800000, guid: 8ea795c067613354898068091ffc7130, type: 3}
-    hotspot: {x: 0, y: 0}
+    hotspot: {x: 10, y: 5}
   - type: 2
     texture: {fileID: 2800000, guid: 2d18e23e3ce249b4489b8bcdd02d3f48, type: 3}
-    hotspot: {x: 0, y: 0}
+    hotspot: {x: 10, y: 5}
   - type: 3
     texture: {fileID: 2800000, guid: e4fac5245b727db42ba0ca0258851b83, type: 3}
-    hotspot: {x: 0, y: 0}
+    hotspot: {x: 10, y: 5}
   - type: 4
     texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
-    hotspot: {x: 0, y: 0}
+    hotspot: {x: 10, y: 5}
   - type: 5
     texture: {fileID: 2800000, guid: 2a2b4775272c890448e1bd6239fdfc84, type: 3}
-    hotspot: {x: 0, y: 0}
+    hotspot: {x: 10, y: 5}
   - type: 6
     texture: {fileID: 2800000, guid: 96d4bfdb0d6d8c042bf8fccf6524d239, type: 3}
-    hotspot: {x: 0, y: 0}
+    hotspot: {x: 10, y: 5}
+  - type: 7
+    texture: {fileID: 2800000, guid: 7c487959e49b9e447a29431caf3fdc77, type: 3}
+    hotspot: {x: 10, y: 5}
   maxNavMeshProjectionDistance: 1
   rayCastRadius: 1
 --- !u!114 &6991534629963710895
@@ -501,18 +516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 80
---- !u!114 &1734272178760368835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5221760887275590416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 250ab901d41c2ea48967d0b136278391, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5221760887275590447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3306555947678058778, guid: 5d926a974958679468dfef0c622af9c7, type: 3}

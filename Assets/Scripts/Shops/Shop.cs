@@ -20,8 +20,14 @@ namespace RPG.Shops
         }
 
         private Dictionary<InventoryItem, int> transaction = new Dictionary<InventoryItem, int>();
+        private Shopper currentShopper = null;
 
         public event Action onChange;
+
+        public void SetShopper(Shopper shopper)
+        {
+            currentShopper = shopper;
+        }
 
         public IEnumerable<ShopItem> GetFilteredItems()
         {
@@ -59,6 +65,22 @@ namespace RPG.Shops
 
         public void ConfirmTransaction()
         {
+            Inventory shopperInventory = currentShopper.GetComponent<Inventory>();
+            if (shopperInventory == null) return;
+
+            var transactionSnapshot = new Dictionary<InventoryItem, int>(transaction);
+            foreach (var item in transactionSnapshot.Keys)
+            {
+                int quantity = transactionSnapshot[item];
+                for (int i = 0; i < quantity; i++)
+                {
+                    bool success = shopperInventory.AddToFirstEmptySlot(item, 1);
+                    if (success)
+                    {
+                        AddToTransaction(item, -1);
+                    }
+                }
+            }
         }
 
         public float TransactionTotal()
@@ -72,7 +94,7 @@ namespace RPG.Shops
             {
                 transaction[item] = 0;
             }
-            
+
             transaction[item] += quantity;
 
             if (transaction[item] <= 0)
