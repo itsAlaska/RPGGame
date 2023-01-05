@@ -39,7 +39,7 @@ namespace RPG.Shops
             return price;
         }
         
-        public int GetQuantity()
+        public int GetQuantityInTransaction()
         {
             return quantityInTransaction;
         }

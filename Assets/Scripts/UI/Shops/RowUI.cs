@@ -24,7 +24,7 @@ namespace RPG.UI.Shops
             nameField.text = item.GetName();
             availabilityField.text = $"{item.GetAvailability()}";
             priceField.text = $"${item.GetPrice():N2}";
-            quantityField.text = $"{item.GetQuantity()}";
+            quantityField.text = $"{item.GetQuantityInTransaction()}";
         }
 
         public void Add()
