@@ -65,6 +65,7 @@ namespace RPG.Shops
 
         public void AddToTransaction(InventoryItem item, int quantity)
         {
+            Debug.Log($"Add to transaction: {item.GetDisplayName()} x {quantity}");
         }
 
         public string GetShopName()

@@ -47,7 +47,7 @@ namespace RPG.UI.Shops
             {
                 var row = Instantiate(rowPrefab, listRoot);
 
-                row.Setup(item);
+                row.Setup(currentShop, item);
             }
         }
 

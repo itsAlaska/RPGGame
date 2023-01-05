@@ -43,6 +43,11 @@ namespace RPG.Shops
         {
             return quantityInTransaction;
         }
+
+        public InventoryItem GetInventoryItem()
+        {
+            return item;
+        }
     }
 }
 
