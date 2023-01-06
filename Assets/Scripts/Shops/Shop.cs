@@ -20,9 +20,18 @@ namespace RPG.Shops
         }
 
         private Dictionary<InventoryItem, int> transaction = new Dictionary<InventoryItem, int>();
+        private Dictionary<InventoryItem, int> stock = new Dictionary<InventoryItem, int>();
         private Shopper currentShopper = null;
 
         public event Action onChange;
+
+        private void Awake()
+        {
+            foreach (var config in stockConfig)
+            {
+                stock[config.item] = config.initialStock;
+            }
+        }
 
         public void SetShopper(Shopper shopper)
         {
@@ -40,7 +49,8 @@ namespace RPG.Shops
             {
                 float adjustedPrice = config.item.GetPrice() * (1 - config.buyingDiscountPercentage / 100);
                 transaction.TryGetValue(config.item, out var quantityInTransaction);
-                yield return new ShopItem(config.item, config.initialStock, adjustedPrice, quantityInTransaction);
+                int currentStock = stock[config.item];
+                yield return new ShopItem(config.item, currentStock, adjustedPrice, quantityInTransaction);
             }
         }
 
@@ -81,15 +91,22 @@ namespace RPG.Shops
                 for (int i = 0; i < quantity; i++)
                 {
                     if (shopperPurse.GetBalance() < price) break;
-                    
+
                     bool success = shopperInventory.AddToFirstEmptySlot(item, 1);
                     if (success)
                     {
                         AddToTransaction(item, -1);
+                        stock[item]--;
                         shopperPurse.UpdateBalance(-price);
                     }
                 }
             }
+
+            if (onChange != null)
+            {
+                onChange();
+            }
+            
         }
 
         public float TransactionTotal()
@@ -110,7 +127,14 @@ namespace RPG.Shops
                 transaction[item] = 0;
             }
 
-            transaction[item] += quantity;
+            if (transaction[item] + quantity > stock[item])
+            {
+                transaction[item] = stock[item];
+            }
+            else
+            {
+                transaction[item] += quantity;
+            }
 
             if (transaction[item] <= 0)
             {
