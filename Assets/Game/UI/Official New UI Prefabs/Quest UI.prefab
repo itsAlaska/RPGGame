@@ -932,6 +932,30 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 6218665175603033825, guid: 4af1392bafa2c204080299e1cb1142a2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218665175603033825, guid: 4af1392bafa2c204080299e1cb1142a2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218665175603033825, guid: 4af1392bafa2c204080299e1cb1142a2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218665175603033825, guid: 4af1392bafa2c204080299e1cb1142a2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218665175603033825, guid: 4af1392bafa2c204080299e1cb1142a2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218665175603033825, guid: 4af1392bafa2c204080299e1cb1142a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6555573981347147655, guid: 4af1392bafa2c204080299e1cb1142a2, type: 3}
       propertyPath: m_Name
       value: Equipment Header
@@ -966,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8518438198939825136, guid: 4af1392bafa2c204080299e1cb1142a2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 140.031
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8518438198939825136, guid: 4af1392bafa2c204080299e1cb1142a2, type: 3}
       propertyPath: m_SizeDelta.y
