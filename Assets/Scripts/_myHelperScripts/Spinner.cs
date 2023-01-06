@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Spinner : MonoBehaviour
 {
-    [SerializeField]
-    float zAxis = 0f;
-    [SerializeField]
-    float yAxis = 0f;
-    [SerializeField]
-    float xAxis = 0f;
+    [SerializeField] private float timeCounter = 0;
+    [SerializeField] private float speed;
+    [SerializeField] float zAxis = 0f;
+    [SerializeField] float yAxis = 0f;
+    [SerializeField] float xAxis = 0f;
 
 
     void Update()
     {
-        transform.Rotate(xAxis * Time.deltaTime, yAxis * Time.deltaTime, zAxis * Time.deltaTime, Space.Self);
+        timeCounter += Time.deltaTime * speed;
+        
+        transform.Rotate(xAxis * timeCounter, yAxis * timeCounter, zAxis * timeCounter, Space.Self);
     }
 }

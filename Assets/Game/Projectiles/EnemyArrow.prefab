@@ -9797,7 +9797,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270690f0e0876b44d89dcd07c44054bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zAxis: 3
+  timeCounter: 0
+  speed: 3.5
+  zAxis: 5
   yAxis: 0
   xAxis: 0
 --- !u!1001 &2096070138376509574
