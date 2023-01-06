@@ -39,6 +39,9 @@ namespace RPG.Inventories
 
         [Tooltip("The price of this item, if it is sellable / buyable.")] [SerializeField]
         float price = 0;
+        
+        [Tooltip("Set the type of item for filtering in shops.")] [SerializeField]
+        ItemCategory category = ItemCategory.None;
 
         static Dictionary<string, InventoryItem> itemLookupCache;
 
@@ -123,6 +126,11 @@ namespace RPG.Inventories
         public float GetPrice()
         {
             return price;
+        }
+
+        public ItemCategory GetCategory()
+        {
+            return category;
         }
 
         void ISerializationCallbackReceiver.OnBeforeSerialize()

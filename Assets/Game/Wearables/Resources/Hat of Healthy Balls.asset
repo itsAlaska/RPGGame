@@ -20,6 +20,7 @@ MonoBehaviour:
   stackable: 0
   isQuestItem: 0
   price: 25
+  category: 1
   allowedEquipLocation: 0
   additiveModifiers:
   - stat: 0

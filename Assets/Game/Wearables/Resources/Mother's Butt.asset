@@ -20,3 +20,4 @@ MonoBehaviour:
   stackable: 0
   isQuestItem: 1
   price: 69
+  category: 4

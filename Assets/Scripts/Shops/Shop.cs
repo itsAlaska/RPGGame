@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RPG.Control;
 using RPG.Inventories;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RPG.Shops
@@ -45,7 +46,14 @@ namespace RPG.Shops
 
         public IEnumerable<ShopItem> GetFilteredItems()
         {
-            return GetAllItems();
+            foreach (var shopItem in GetAllItems())
+            {
+                var item = shopItem.GetInventoryItem();
+                if (filter == ItemCategory.None || item.GetCategory() == filter)
+                {
+                    yield return shopItem;
+                }
+            }
         }
 
         public IEnumerable<ShopItem> GetAllItems()
@@ -152,7 +160,6 @@ namespace RPG.Shops
                     {
                         SellItem(shopperInventory, shopperPurse, item, price);
                     }
-                    
                 }
             }
 
@@ -161,7 +168,7 @@ namespace RPG.Shops
                 onChange();
             }
         }
-        
+
         public float TransactionTotal()
         {
             float total = 0;
@@ -237,9 +244,9 @@ namespace RPG.Shops
             var inventory = currentShopper.GetComponent<Inventory>();
 
             if (inventory == null) return 0;
-            
+
             var total = 0;
-            
+
             for (int i = 0; i < inventory.GetSize(); i++)
             {
                 if (item == inventory.GetItemInSlot(i))
