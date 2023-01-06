@@ -77,7 +77,41 @@ namespace RPG.Shops
         {
             if (IsTransactionEmpty()) return false;
             if (!HasSufficientFunds()) return false;
+            if (!HasInventorySpace()) return false;
             return true;
+        }
+
+        public bool HasSufficientFunds()
+        {
+            Purse shoppersPurse = currentShopper.GetComponent<Purse>();
+
+            if (shoppersPurse == null) return false;
+
+            return shoppersPurse.GetBalance() >= TransactionTotal();
+        }
+
+        public bool HasInventorySpace()
+        {
+            Inventory shopperInventory = currentShopper.GetComponent<Inventory>();
+            if (shopperInventory == null) return false;
+            
+            List<InventoryItem> flatItems = new List<InventoryItem>();
+            foreach (var shopItem in GetAllItems())
+            {
+                InventoryItem item = shopItem.GetInventoryItem();
+                int quantity = shopItem.GetQuantityInTransaction();
+                for (int i = 0; i < quantity; i++)
+                {
+                    flatItems.Add(item);
+                }
+            }
+
+            return shopperInventory.HasSpaceFor(flatItems);
+        }
+
+        public bool IsTransactionEmpty()
+        {
+            return transaction.Count == 0;
         }
 
         public void ConfirmTransaction()
@@ -170,18 +204,6 @@ namespace RPG.Shops
             return true;
         }
 
-        public bool HasSufficientFunds()
-        {
-            Purse shoppersPurse = currentShopper.GetComponent<Purse>();
-
-            if (shoppersPurse == null) return false;
-            
-            return shoppersPurse.GetBalance() >= TransactionTotal();
-        }
-
-        private bool IsTransactionEmpty()
-        {
-            return transaction.Count == 0;
-        }
+        
     }
 }
