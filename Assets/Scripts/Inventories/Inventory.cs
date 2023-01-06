@@ -10,8 +10,7 @@ namespace RPG.Inventories
 {
     public class Inventory : MonoBehaviour, ISaveable, IPredicateEvaluator
     {
-        [Tooltip("Allowed size")]
-        [SerializeField]
+        [Tooltip("Allowed size")] [SerializeField]
         int inventorySize = 16;
 
         InventorySlot[] slots;
@@ -65,9 +64,37 @@ namespace RPG.Inventories
 
         public bool HasSpaceFor(IEnumerable<InventoryItem> items)
         {
-            var count = items.Count();
+            var freeSlots = FreeSlots();
+            List<InventoryItem> stackedItems = new List<InventoryItem>();
+            foreach (var item in items)
+            {
+                if (item.IsStackable())
+                {
+                    if (HasItem(item)) continue;
+                    if (stackedItems.Contains(item)) continue;
+                    stackedItems.Add(item);
+                }
 
-            return count <= inventorySize;
+                if (freeSlots <= 0) return false;
+                freeSlots--;
+            }
+
+            return true;
+        }
+
+        public int FreeSlots()
+        {
+            int count = 0;
+
+            foreach (var slot in slots)
+            {
+                if (slot.number == 0)
+                {
+                    count++;
+                }
+            }
+
+            return count;
         }
 
         /// <summary>
@@ -99,6 +126,7 @@ namespace RPG.Inventories
             {
                 inventoryUpdated();
             }
+
             return true;
         }
 
@@ -125,7 +153,7 @@ namespace RPG.Inventories
         {
             return slots[slot].item;
         }
-        
+
         /// <summary>
         /// Return the amount of the item in the given slot.
         /// </summary>
@@ -145,6 +173,7 @@ namespace RPG.Inventories
                 slots[slot].number = 0;
                 slots[slot].item = null;
             }
+
             if (inventoryUpdated != null)
             {
                 inventoryUpdated();
@@ -179,6 +208,7 @@ namespace RPG.Inventories
             {
                 inventoryUpdated();
             }
+
             return true;
         }
 
@@ -230,7 +260,7 @@ namespace RPG.Inventories
             {
                 return -1;
             }
-            
+
             for (int i = 0; i < slots.Length; i++)
             {
                 if (object.ReferenceEquals(slots[i].item, item))
@@ -260,6 +290,7 @@ namespace RPG.Inventories
                     slotRecords[i].number = slots[i].number;
                 }
             }
+
             return slotRecords;
         }
 
@@ -271,6 +302,7 @@ namespace RPG.Inventories
                 slots[i].item = InventoryItem.GetFromID(slotRecords[i].itemID);
                 slots[i].number = slotRecords[i].number;
             }
+
             if (inventoryUpdated != null)
             {
                 inventoryUpdated();
