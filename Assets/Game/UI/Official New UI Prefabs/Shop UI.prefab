@@ -1531,7 +1531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6204400364221788745, guid: 23ae1d5566abefc4eae3e5d5788a9048, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6204400364221788745, guid: 23ae1d5566abefc4eae3e5d5788a9048, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1630,6 +1630,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!114 &5217339400203070647 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6204400364221788745, guid: 23ae1d5566abefc4eae3e5d5788a9048, type: 3}
+  m_PrefabInstance: {fileID: 2197127461223702270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5154374163745206761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5817549506336979062 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5675052012921185928, guid: 23ae1d5566abefc4eae3e5d5788a9048, type: 3}
@@ -2923,6 +2934,7 @@ MonoBehaviour:
   listRoot: {fileID: 8128349434461400151}
   rowPrefab: {fileID: 8303814803907994486, guid: f83e3b0b247c62a48a273c37ca833823, type: 3}
   totalField: {fileID: 8342304418806441644}
+  confirmButton: {fileID: 5217339400203070647}
 --- !u!224 &6149153033522242087 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1516445503393336539, guid: c65b6e024c7afbc478c654b1d2393cbf, type: 3}

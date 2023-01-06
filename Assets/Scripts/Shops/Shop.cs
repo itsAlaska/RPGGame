@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using RPG.Control;
 using RPG.Inventories;
 using UnityEngine;
@@ -74,6 +75,8 @@ namespace RPG.Shops
 
         public bool CanTransact()
         {
+            if (IsTransactionEmpty()) return false;
+            if (!HasSufficientFunds()) return false;
             return true;
         }
 
@@ -165,6 +168,20 @@ namespace RPG.Shops
             }
 
             return true;
+        }
+
+        public bool HasSufficientFunds()
+        {
+            Purse shoppersPurse = currentShopper.GetComponent<Purse>();
+
+            if (shoppersPurse == null) return false;
+            
+            return shoppersPurse.GetBalance() >= TransactionTotal();
+        }
+
+        private bool IsTransactionEmpty()
+        {
+            return transaction.Count == 0;
         }
     }
 }
