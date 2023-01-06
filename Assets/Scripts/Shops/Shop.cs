@@ -10,6 +10,8 @@ namespace RPG.Shops
     public class Shop : MonoBehaviour, IRaycastable
     {
         [SerializeField] private string shopName = null;
+        [SerializeField] [Range(0, 100)] public float sellingPercentage = 80;
+
         [SerializeField] private StockItemConfig[] stockConfig;
 
         [Serializable]
@@ -23,6 +25,7 @@ namespace RPG.Shops
         private Dictionary<InventoryItem, int> transaction = new Dictionary<InventoryItem, int>();
         private Dictionary<InventoryItem, int> stock = new Dictionary<InventoryItem, int>();
         private Shopper currentShopper = null;
+        private bool isBuyingMode = true;
 
         public event Action onChange;
 
@@ -48,11 +51,21 @@ namespace RPG.Shops
         {
             foreach (StockItemConfig config in stockConfig)
             {
-                float adjustedPrice = config.item.GetPrice() * (1 - config.buyingDiscountPercentage / 100);
+                float adjustedPrice = GetPrice(config);
                 transaction.TryGetValue(config.item, out var quantityInTransaction);
                 int currentStock = stock[config.item];
                 yield return new ShopItem(config.item, currentStock, adjustedPrice, quantityInTransaction);
             }
+        }
+
+        private float GetPrice(StockItemConfig config)
+        {
+            if (IsBuyingMode())
+            {
+                return config.item.GetPrice() * (1 - config.buyingDiscountPercentage / 100);
+            }
+
+            return config.item.GetPrice() * (sellingPercentage / 100);
         }
 
         public void SelectFilter(ItemCategory category)
@@ -66,11 +79,16 @@ namespace RPG.Shops
 
         public void SelectMode(bool isBuying)
         {
+            isBuyingMode = isBuying;
+            if (onChange != null)
+            {
+                onChange();
+            }
         }
 
         public bool IsBuyingMode()
         {
-            return true;
+            return isBuyingMode;
         }
 
         public bool CanTransact()
@@ -94,7 +112,7 @@ namespace RPG.Shops
         {
             Inventory shopperInventory = currentShopper.GetComponent<Inventory>();
             if (shopperInventory == null) return false;
-            
+
             List<InventoryItem> flatItems = new List<InventoryItem>();
             foreach (var shopItem in GetAllItems())
             {
@@ -143,7 +161,6 @@ namespace RPG.Shops
             {
                 onChange();
             }
-            
         }
 
         public float TransactionTotal()
@@ -203,7 +220,5 @@ namespace RPG.Shops
 
             return true;
         }
-
-        
     }
 }

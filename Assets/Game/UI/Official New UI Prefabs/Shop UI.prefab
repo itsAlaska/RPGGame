@@ -1976,11 +1976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7588416348519957452, guid: 0f04204151ddcfe4aa77dd1c8851d92b, type: 3}
       propertyPath: m_Size
-      value: 0.93526024
+      value: 0.9352601
       objectReference: {fileID: 0}
     - target: {fileID: 7588416348519957452, guid: 0f04204151ddcfe4aa77dd1c8851d92b, type: 3}
       propertyPath: m_Value
-      value: 0.9999986
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f04204151ddcfe4aa77dd1c8851d92b, type: 3}
@@ -2935,6 +2935,7 @@ MonoBehaviour:
   rowPrefab: {fileID: 8303814803907994486, guid: f83e3b0b247c62a48a273c37ca833823, type: 3}
   totalField: {fileID: 8342304418806441644}
   confirmButton: {fileID: 5217339400203070647}
+  switchButton: {fileID: 1579307343966917625}
 --- !u!224 &6149153033522242087 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1516445503393336539, guid: c65b6e024c7afbc478c654b1d2393cbf, type: 3}
@@ -3049,7 +3050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482298580337258263, guid: 23ae1d5566abefc4eae3e5d5788a9048, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: Switch Button
       objectReference: {fileID: 0}
     - target: {fileID: 7107643162756923282, guid: 23ae1d5566abefc4eae3e5d5788a9048, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3101,6 +3102,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23ae1d5566abefc4eae3e5d5788a9048, type: 3}
+--- !u!114 &1579307343966917625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6204400364221788745, guid: 23ae1d5566abefc4eae3e5d5788a9048, type: 3}
+  m_PrefabInstance: {fileID: 4895596323835617712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875017923352546983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1875017923352546983 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6482298580337258263, guid: 23ae1d5566abefc4eae3e5d5788a9048, type: 3}
