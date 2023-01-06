@@ -1,3 +1,4 @@
+using RPG.Inventories;
 using RPG.Shops;
 using TMPro;
 using UnityEngine;
@@ -87,6 +88,11 @@ namespace RPG.UI.Shops
             {
                 switchText.text = "Switch to Buying";
                 confirmText.text = "Sell";
+            }
+
+            foreach (var button in GetComponentsInChildren<FilterButtonUI>())
+            {
+                button.RefreshUI();
             }
         }
 
