@@ -92,6 +92,8 @@ namespace RPG.Inventories
             {
                 storeUpdated();
             }
+
+            Debug.Log("Action Added");
         }
 
         /// <summary>
