@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grunt
       objectReference: {fileID: 0}
+    - target: {fileID: 3306555947678058789, guid: 5d926a974958679468dfef0c622af9c7, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3837536340897908925, guid: 5d926a974958679468dfef0c622af9c7, type: 3}
       propertyPath: m_RootOrder
       value: 3
