@@ -22,3 +22,4 @@ MonoBehaviour:
   price: 50
   category: 5
   consumable: 0
+  targetingStrategy: {fileID: 11400000, guid: 9d25069df6819504b9bdfbeb41757cd9, type: 2}
