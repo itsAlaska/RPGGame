@@ -1,9 +1,10 @@
 using System;
+using RPG.Saving;
 using UnityEngine;
 
 namespace RPG.Inventories
 {
-    public class Purse : MonoBehaviour
+    public class Purse : MonoBehaviour, ISaveable
     {
         [SerializeField] private float startingBalance = 400;
 
@@ -28,6 +29,16 @@ namespace RPG.Inventories
             {
                 onChange();
             }
+        }
+
+        public object CaptureState()
+        {
+            return GetBalance();
+        }
+
+        public void RestoreState(object state)
+        {
+            balance = (float)state;
         }
     }
 }

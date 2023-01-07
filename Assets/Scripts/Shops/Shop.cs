@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using RPG.Control;
 using RPG.Inventories;
+using RPG.Saving;
 using RPG.Stats;
 using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RPG.Shops
 {
-    public class Shop : MonoBehaviour, IRaycastable
+    public class Shop : MonoBehaviour, IRaycastable, ISaveable
     {
         [SerializeField] private string shopName = null;
         [SerializeField] [Range(0, 100)] public float sellingPercentage = 80;
@@ -363,6 +364,29 @@ namespace RPG.Shops
             if (stats == null) return 0;
 
             return stats.GetLevel();
+        }
+
+        public object CaptureState()
+        {
+            Dictionary<string, int> saveObject = new Dictionary<string, int>();
+
+            foreach (var pair in stockSold)
+            {
+                saveObject[pair.Key.GetItemID()] = pair.Value;
+            }
+
+            return saveObject;
+        }
+
+        public void RestoreState(object state)
+        {
+            Dictionary<string, int> saveObject = (Dictionary<string, int>) state;
+            stockSold.Clear();
+            
+            foreach (var pair in saveObject)
+            {
+                stockSold[InventoryItem.GetFromID(pair.Key)] = pair.Value;
+            }
         }
     }
 }
