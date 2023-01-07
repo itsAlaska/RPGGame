@@ -437,6 +437,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c8696f69357a044a6a8bef1ecd2173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4631593593588450183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5221760887275590416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f2d539e03be774aad984a0fd0fcc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingBalance: 400
 --- !u!114 &6403724856029558545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +489,7 @@ MonoBehaviour:
     hotspot: {x: 6, y: 4}
   maxNavMeshProjectionDistance: 1
   rayCastRadius: 1
+  numberOfAbilities: 6
 --- !u!114 &6991534629963710895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 80
---- !u!114 &4631593593588450183
+--- !u!114 &8899942279837923761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -525,10 +539,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5221760887275590416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f2d539e03be774aad984a0fd0fcc64, type: 3}
+  m_Script: {fileID: 11500000, guid: 81d8e6aae1abe604582b551011a6a0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingBalance: 400
 --- !u!4 &5221760887275590447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3306555947678058778, guid: 5d926a974958679468dfef0c622af9c7, type: 3}

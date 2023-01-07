@@ -3,14 +3,17 @@ using RPG.Movement;
 using RPG.Combat;
 using RPG.Attributes;
 using System;
+using RPG.Inventories;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
+using UnityEngine.Assertions.Must;
 
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
         Health health;
+        private ActionStore actionStore;
 
         [System.Serializable]
         struct CursorMapping
@@ -21,16 +24,16 @@ namespace RPG.Control
         }
 
         [SerializeField] CursorMapping[] cursorMappings = null;
-
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
-
         [SerializeField] float rayCastRadius = 1f;
+        [SerializeField] private int numberOfAbilities = 6;
 
         private bool isDraggingUI = false;
 
         void Awake()
         {
             health = GetComponent<Health>();
+            actionStore = GetComponent<ActionStore>();
         }
 
         void Update()
@@ -43,6 +46,8 @@ namespace RPG.Control
                 return;
             }
 
+            UseAbilities();
+
             if (InteractWithComponent())
                 return;
             if (InteractWithMovement())
@@ -50,6 +55,8 @@ namespace RPG.Control
 
             SetCursor(CursorType.None);
         }
+
+        
 
         bool InteractWithComponent()
         {
@@ -110,7 +117,7 @@ namespace RPG.Control
 
             return false;
         }
-
+        
         bool InteractWithMovement()
         {
             Vector3 target;
@@ -132,6 +139,18 @@ namespace RPG.Control
             return false;
         }
 
+        private void UseAbilities()
+        {
+            for (int i = 0; i < numberOfAbilities; i++)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+                {
+                    actionStore.Use(i, gameObject);
+                }
+            }
+           
+        }
+        
         bool RaycastNavMesh(out Vector3 target)
         {
             target = new Vector3();
