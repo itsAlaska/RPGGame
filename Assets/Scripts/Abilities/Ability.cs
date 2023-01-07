@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using RPG.Inventories;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace RPG.Abilities
 {
@@ -10,24 +9,29 @@ namespace RPG.Abilities
     {
         [SerializeField] private TargetingStrategy targetingStrategy;
         [SerializeField] private FilterStrategy[] filterStrategies;
+        [SerializeField] private EffectStrategy[] effectStrategies;
 
         public override void Use(GameObject user)
         {
-            targetingStrategy.StartTargeting(user, TargetAcquired);
+            targetingStrategy.StartTargeting(user, 
+                targets => TargetAcquired(user, targets));
         }
 
-        private void TargetAcquired(IEnumerable<GameObject> targets)
+        private void TargetAcquired(GameObject user, IEnumerable<GameObject> targets)
         {
             foreach (var filterStrategy in filterStrategies)
             {
                 targets = filterStrategy.Filter(targets);
             }
-            
-            
-            foreach (var target in targets)
+
+            foreach (var effect in effectStrategies)
             {
-                Debug.Log(target);
+                effect.StartEffect(user, targets, EffectFinished);
             }
+        }
+
+        private void EffectFinished()
+        {
         }
     }
 }
