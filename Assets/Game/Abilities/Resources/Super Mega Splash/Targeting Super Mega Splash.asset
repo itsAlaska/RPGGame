@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Targeting Super Mega Splash
   m_EditorClassIdentifier: 
   cursorTexture: {fileID: 2800000, guid: 6fdfcd4167ed5e7488584241bb671bb2, type: 3}
-  cursorHotspot: {x: 0, y: 0}
+  cursorHotspot: {x: 10, y: 5}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  areaAffectRadius: 5
+  targetingPrefab: {fileID: 4176708280322280930, guid: 207fef0af0f28d04b8655b1bcea1d10e, type: 3}
