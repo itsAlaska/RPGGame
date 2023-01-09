@@ -1,51 +1,54 @@
-using System;
+using GameDevTV.Utils;
+using RPG.Stats;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace RPG.Attributes
 {
     public class Mana : MonoBehaviour
     {
-        [SerializeField] private float maxMana = 15;
-        [SerializeField] private float manaRegenRate = 0;
-
-        private float mana;
+        LazyValue<float> mana;
 
         private void Awake()
         {
-            mana = maxMana;
+            mana = new LazyValue<float>(GetMaxMana);
         }
 
         private void Update()
         {
-            if (mana < maxMana)
+            if (mana.value < GetMaxMana())
             {
-                mana += manaRegenRate * Time.deltaTime;
-                if (mana > maxMana)
+                mana.value += GetRegenRate() * Time.deltaTime;
+                if (mana.value > GetMaxMana())
                 {
-                    mana = maxMana;
+                    mana.value = GetMaxMana();
                 }
             }
         }
 
         public float GetMana()
         {
-            return Mathf.Round(mana);
+            return Mathf.Round(mana.value);
         }
 
         public float GetMaxMana()
         {
-            return Mathf.Round(maxMana);
+            return Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.Mana));
+        }
+
+        public float GetRegenRate()
+        {
+            return Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.ManaRegenRate));
         }
 
         public bool UseMana(float manaToUse)
         {
-            if (manaToUse > mana)
+            if (manaToUse > mana.value)
             {
                 return false;
             }
 
-            mana -= manaToUse;
+            mana.value -= manaToUse;
             return true;
         }
     }

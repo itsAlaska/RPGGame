@@ -2,7 +2,6 @@ using UnityEngine;
 using RPG.Saving;
 using RPG.Core;
 using RPG.Stats;
-using System;
 using GameDevTV.Utils;
 using UnityEngine.Events;
 
