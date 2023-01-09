@@ -1,6 +1,6 @@
-using System.Collections.Generic;
 using RPG.Inventories;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace RPG.Abilities
 {
@@ -10,15 +10,24 @@ namespace RPG.Abilities
         [SerializeField] private TargetingStrategy targetingStrategy;
         [SerializeField] private FilterStrategy[] filterStrategies;
         [SerializeField] private EffectStrategy[] effectStrategies;
+        [FormerlySerializedAs("cooldown")] [SerializeField] private float cooldownTime;
 
         public override void Use(GameObject user)
         {
+            CooldownStore cooldownStore = user.GetComponent<CooldownStore>();
+            if (cooldownStore.GetTimeRemaining(this) > 0)
+            {
+                return;
+            }
+            
             AbilityData data = new AbilityData(user);
             targetingStrategy.StartTargeting(data, () => { TargetAcquired(data); });
         }
 
         private void TargetAcquired(AbilityData data)
         {
+            CooldownStore cooldownStore = data.GetUser().GetComponent<CooldownStore>();
+            cooldownStore.StartCooldown(this, cooldownTime);
             foreach (var filterStrategy in filterStrategies)
             {
                 data.SetTargets(filterStrategy.Filter(data.GetTargets()));
