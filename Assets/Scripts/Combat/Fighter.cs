@@ -12,17 +12,13 @@ namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour, IAction, ISaveable, IModifierProvider
     {
-        [SerializeField]
-        float timeBetweenAttacks = 1f;
+        [SerializeField] float timeBetweenAttacks = 1f;
 
-        [SerializeField]
-        Transform rightHandTransform = null;
+        [SerializeField] Transform rightHandTransform = null;
 
-        [SerializeField]
-        Transform leftHandTransform = null;
+        [SerializeField] Transform leftHandTransform = null;
 
-        [SerializeField]
-        WeaponConfig defaultWeapon = null;
+        [SerializeField] WeaponConfig defaultWeapon = null;
 
         Health target;
         Equipment equipment;
@@ -124,7 +120,7 @@ namespace RPG.Combat
         bool GetIsInRange(Transform targetTransform)
         {
             return Vector3.Distance(transform.position, targetTransform.position)
-                <= currentWeaponConfig.GetRange;
+                   <= currentWeaponConfig.GetRange;
         }
 
         public bool CanAttack(GameObject combatTarget)
@@ -220,6 +216,12 @@ namespace RPG.Combat
         public Health GetTarget()
         {
             return target;
+        }
+
+        public Transform GetHandTransform(bool isRightHand)
+        {
+            if (isRightHand) return rightHandTransform;
+            return leftHandTransform;
         }
 
         public object CaptureState()

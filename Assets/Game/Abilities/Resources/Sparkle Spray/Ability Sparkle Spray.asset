@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0af1e8a75b29346804f8abe8f6b801, type: 3}
+  m_Name: Ability Sparkle Spray
+  m_EditorClassIdentifier: 
+  itemID: 8dbe982b-b9b9-4731-a7ac-2b4705592bd0
+  displayName: Sparkle Sprary
+  description: Oooo
+  icon: {fileID: 21300000, guid: 1a847878ad0c6fe43af9500e397838db, type: 3}
+  pickup: {fileID: 5402853316129546468, guid: 34cb2ae5aac06824b893c3edb446dcec, type: 3}
+  stackable: 0
+  isQuestItem: 0
+  price: 50
+  category: 5
+  consumable: 0
+  targetingStrategy: {fileID: 11400000, guid: 9f9bcae3ccd4aa54faf8047588930106, type: 2}
+  filterStrategies:
+  - {fileID: 11400000, guid: b017a152ed67bf24780e258520efff77, type: 2}
+  effectStrategies:
+  - {fileID: 11400000, guid: 888031ac0aeab2a49bd03c38a388ce19, type: 2}
+  - {fileID: 11400000, guid: 445a0909d59afc84ba8384074b3b3f8b, type: 2}
+  - {fileID: 11400000, guid: 5f8c101e5b777ec4c8ccd8bf82f11288, type: 2}
+  cooldownTime: 2
+  manaCost: 5

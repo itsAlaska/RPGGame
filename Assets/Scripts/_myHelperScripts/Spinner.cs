@@ -13,7 +13,7 @@ public class Spinner : MonoBehaviour
 
     void Update()
     {
-        timeCounter += Time.deltaTime * speed;
+        timeCounter = Time.deltaTime * speed;
         
         transform.Rotate(xAxis * timeCounter, yAxis * timeCounter, zAxis * timeCounter, Space.Self);
     }
