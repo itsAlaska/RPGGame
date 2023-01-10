@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0af1e8a75b29346804f8abe8f6b801, type: 3}
+  m_Name: Health Potion
+  m_EditorClassIdentifier: 
+  itemID: 0d5e5074-5288-42e3-94f5-a0cb46a227b3
+  displayName: Health Potion
+  description: Makes you feel pret-ty good, tbh.
+  icon: {fileID: 21300000, guid: 023b6cb4bcb411e49ad3651e8e5099f2, type: 3}
+  pickup: {fileID: 5402853316129546468, guid: 34cb2ae5aac06824b893c3edb446dcec, type: 3}
+  stackable: 1
+  isQuestItem: 0
+  price: 5
+  category: 3
+  consumable: 1
+  targetingStrategy: {fileID: 11400000, guid: 627057475faf1a440a7ce54f558c550f, type: 2}
+  filterStrategies: []
+  effectStrategies:
+  - {fileID: 11400000, guid: 8712b7cbae8cfc94a903309084609df8, type: 2}
+  - {fileID: 11400000, guid: 18c742bfa1101bc4e81d96581c16cd75, type: 2}
+  cooldownTime: 0
+  manaCost: 0

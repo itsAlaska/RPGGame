@@ -14,6 +14,7 @@ namespace RPG.Abilities.Effects
 
         public override void StartEffect(AbilityData data, Action finished)
         {
+            if (prefabToSpawn == null) return;
             data.StartCoroutine(Effect(data, finished));
         }
 

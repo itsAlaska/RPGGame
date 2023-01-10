@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f93ad06db194643bc3df37ec715cda, type: 3}
+  m_Name: Heal Particle Effect
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 8867430241230843861, guid: 94026dcea6350c44ab69770654dfe158, type: 3}
+  destroyDelay: 5
