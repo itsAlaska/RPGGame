@@ -1,15 +1,15 @@
 using GameDevTV.Utils;
 using RPG.SceneManagement;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace RPG.UI
 {
     public class MainMenuUI : MonoBehaviour
     {
-        [SerializeField] private Button continueGameButton;
-        
         private LazyValue<_mySavingWrapper> savingWrapper;
+
+        [SerializeField] private TMP_InputField newGameNameField;
 
         private void Awake()
         {
@@ -24,6 +24,11 @@ namespace RPG.UI
         public void ContinueGame()
         {
             savingWrapper.value.ContinueGame();
+        }
+
+        public void NewGame()
+        {
+            savingWrapper.value.NewGame(newGameNameField.text);
         }
     }
 }

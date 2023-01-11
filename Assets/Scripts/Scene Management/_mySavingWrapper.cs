@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Saving;
@@ -8,46 +9,76 @@ namespace RPG.SceneManagement
 {
     public class _mySavingWrapper : MonoBehaviour
     {
-        [SerializeField]
-        float fadeInTime = 2f;
+        private const string currentSaveKey = "currentSaveName";
+        [SerializeField] float fadeInTime = 2f;
+        [SerializeField] private float fadeOutTime = .2f;
+        [SerializeField] private int firstFieldBuildIndex = 1;
 
-        [SerializeField]private float fadeOutTime = .2f;
-        const string defaultSaveFile = "_mySave";
-        
         public void ContinueGame()
         {
+            if (!PlayerPrefs.HasKey(currentSaveKey)) return;
+            if (!GetComponent<_mySavingSystem>().SaveFileExists(GetCurrentSave())) return;
             StartCoroutine(LoadLastScene());
+        }
+
+        public void NewGame(string saveFile)
+        {
+            if (string.IsNullOrEmpty(saveFile)) return;
+            SetCurrentSave(saveFile);
+            StartCoroutine(LoadFirstScene());
+        }
+
+        private void SetCurrentSave(string saveFile)
+        {
+            PlayerPrefs.SetString(currentSaveKey, saveFile);
+        }
+
+        private string GetCurrentSave()
+        {
+            return PlayerPrefs.GetString(currentSaveKey);
+        }
+
+        private IEnumerator LoadFirstScene()
+        {
+            Fader fader = FindObjectOfType<Fader>();
+            yield return fader.FadeOut(fadeOutTime);
+            yield return SceneManager.LoadSceneAsync(firstFieldBuildIndex);
+            yield return fader.FadeIn(fadeInTime);
         }
 
         IEnumerator LoadLastScene()
         {
             Fader fader = FindObjectOfType<Fader>();
             yield return fader.FadeOut(fadeOutTime);
-            yield return GetComponent<_mySavingSystem>().LoadLastScene(defaultSaveFile);
+            yield return GetComponent<_mySavingSystem>().LoadLastScene(GetCurrentSave());
             yield return fader.FadeIn(fadeInTime);
         }
 
         void Update()
         {
+            if (SceneManager.GetActiveScene().buildIndex == 0) return;
             if (Input.GetKeyDown(KeyCode.S))
             {
                 Save();
             }
+
             if (Input.GetKeyDown(KeyCode.L))
             {
                 Load();
             }
+
             if (Input.GetKeyDown(KeyCode.Delete))
             {
                 Delete();
             }
+
             if (Input.GetKeyDown(KeyCode.Backspace))
             {
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name);
             }
 
-            if(Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Application.Quit();
             }
@@ -55,17 +86,17 @@ namespace RPG.SceneManagement
 
         public void Load()
         {
-            GetComponent<_mySavingSystem>().Load(defaultSaveFile);
+            GetComponent<_mySavingSystem>().Load(GetCurrentSave());
         }
 
         public void Save()
         {
-            GetComponent<_mySavingSystem>().Save(defaultSaveFile);
+            GetComponent<_mySavingSystem>().Save(GetCurrentSave());
         }
 
         public void Delete()
         {
-            GetComponent<_mySavingSystem>().Delete(defaultSaveFile);
+            GetComponent<_mySavingSystem>().Delete(GetCurrentSave());
         }
     }
 }

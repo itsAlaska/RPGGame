@@ -43,6 +43,12 @@ namespace RPG.Saving
             File.Delete(GetPathFromSaveFile(saveFile));
         }
 
+        public bool SaveFileExists(string saveFile)
+        {
+            string path = GetPathFromSaveFile(saveFile);
+            return File.Exists(path);
+        }
+
         private void SaveFile(string saveFile, object state)
         {
             string path = GetPathFromSaveFile(saveFile);

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8832795205823094222}
   - component: {fileID: 6202959929255494929}
   - component: {fileID: 4228812861449457106}
+  - component: {fileID: 6935460262869820682}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -78,6 +79,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6935460262869820682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381516784142645578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb3320f92efd4e45a1ba76f765bb593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newGameNameField: {fileID: 1858044455124122755}
 --- !u!1 &1985031846927326602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1093,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1585579266789829683}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6935460262869820682}
+        m_TargetAssemblyTypeName: RPG.UI.MainMenuUI, Assembly-CSharp
+        m_MethodName: NewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3053393406628621996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1322,7 +1348,6 @@ GameObject:
   - component: {fileID: 8704602300456551496}
   - component: {fileID: 8027355249173763292}
   - component: {fileID: 5097282073342636208}
-  - component: {fileID: 7319496063094197836}
   m_Layer: 5
   m_Name: Main Menu Canvas
   m_TagString: Untagged
@@ -1425,19 +1450,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   persistentObjectPrefab: {fileID: 4701107490112070558, guid: 8e9babf701dbb1c4eb6d808644e2e6d1, type: 3}
---- !u!114 &7319496063094197836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4197976192296649042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fb3320f92efd4e45a1ba76f765bb593, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  continueGameButton: {fileID: 781577246682148697}
 --- !u!1 &4608527252828934169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,7 +2227,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7319496063094197836}
+      - m_Target: {fileID: 6935460262869820682}
         m_TargetAssemblyTypeName: RPG.UI.MainMenuUI, Assembly-CSharp
         m_MethodName: ContinueGame
         m_Mode: 1
