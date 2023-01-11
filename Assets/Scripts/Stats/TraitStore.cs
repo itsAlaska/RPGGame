@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace RPG.Stats
@@ -7,9 +9,7 @@ namespace RPG.Stats
     {
         private Dictionary<Trait, int> assignedPoints = new Dictionary<Trait, int>();
         private Dictionary<Trait, int> stagedPoints = new Dictionary<Trait, int>();
-
-        private int unassignedPoints = 10;
-
+        
         public int GetProposedPoints(Trait trait)
         {
             return GetPoints(trait) + GetStagedPoints(trait);
@@ -30,19 +30,26 @@ namespace RPG.Stats
             if (!CanAssignPoints(trait, points)) return;
 
             stagedPoints[trait] = GetStagedPoints(trait) + points;
-            unassignedPoints -= points;
         }
 
         public bool CanAssignPoints(Trait trait, int points)
         {
             if (GetStagedPoints(trait) + points < 0) return false;
-            return unassignedPoints >= points;
+            return GetUnassignedPoints() >= points;
         }
 
         public int GetUnassignedPoints()
         {
-            return unassignedPoints;
+            return GetAssignablePoints() - GetTotalProposedPoints();
         }
+
+        public int GetTotalProposedPoints()
+        {
+            // return stagedPoints.Keys.Sum(trait => stagedPoints[trait]);
+
+            return assignedPoints.Values.Sum() + stagedPoints.Values.Sum();
+        }
+        
 
         public void Commit()
         {
@@ -52,6 +59,11 @@ namespace RPG.Stats
             }
             
             stagedPoints.Clear();
+        }
+
+        public int GetAssignablePoints()
+        {
+            return (int)GetComponent<BaseStats>().GetStat(Stat.TotalTraitPoints);
         }
     }
 }
