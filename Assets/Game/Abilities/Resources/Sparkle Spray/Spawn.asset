@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce253d49083a1074a9bd03f7118bf1d1, type: 3}
   m_Name: Spawn
   m_EditorClassIdentifier: 
-  projectileToSpawn: {fileID: 6334287375711592903, guid: d2f51fbfbb90d98468f0fbe73579ac65, type: 3}
+  projectileToSpawn: {fileID: 6334287375711592903, guid: 3eaac06e96148f84b928b1dd2ef58d52, type: 3}
   damage: 10
   isRightHand: 1

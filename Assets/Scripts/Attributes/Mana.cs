@@ -1,7 +1,7 @@
+using System.Collections.Generic;
 using GameDevTV.Utils;
 using RPG.Saving;
 using RPG.Stats;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RPG.Attributes
@@ -9,10 +9,14 @@ namespace RPG.Attributes
     public class Mana : MonoBehaviour, ISaveable
     {
         LazyValue<float> mana;
+        private LazyValue<float> regenRate;
+
+        private Dictionary<string, float> stuffToSave = new Dictionary<string, float>();
 
         private void Awake()
         {
             mana = new LazyValue<float>(GetMaxMana);
+            regenRate = new LazyValue<float>(GetRegenRate);
         }
 
         private void Update()
@@ -55,12 +59,16 @@ namespace RPG.Attributes
 
         public object CaptureState()
         {
-            return mana.value;
+            stuffToSave["mana"] = mana.value;
+            stuffToSave["regenRate"] = regenRate.value;
+            return stuffToSave;
         }
 
         public void RestoreState(object state)
         {
-            mana.value = (float)state;
+            Dictionary<string, float> stuffToLoad = (Dictionary<string, float>)state;
+            mana.value = stuffToLoad["mana"];
+            regenRate.value = stuffToLoad["regenRate"];
         }
     }
 }
