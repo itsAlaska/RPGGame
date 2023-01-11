@@ -352,6 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8795095501489817631}
   - component: {fileID: 716169251324689542}
+  - component: {fileID: 497227445935877427}
   m_Layer: 5
   m_Name: TraitsUI
   m_TagString: Untagged
@@ -394,6 +395,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggleKey: 116
   uiContainer: {fileID: 5287833067638537771}
+--- !u!114 &497227445935877427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5601341932338212820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8b181a3a850a94fb80e544672e8c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unassignedPointsText: {fileID: 6866893170452700302}
+  commitButton: {fileID: 893727759186165724}
 --- !u!1 &5956634361535685855
 GameObject:
   m_ObjectHideFlags: 0
