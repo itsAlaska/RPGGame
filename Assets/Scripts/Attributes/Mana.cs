@@ -43,7 +43,7 @@ namespace RPG.Attributes
 
         public float GetRegenRate()
         {
-            return Mathf.Round(GetComponent<BaseStats>().GetStat(Stat.ManaRegenRate));
+            return GetComponent<BaseStats>().GetStat(Stat.ManaRegenRate);
         }
 
         public bool UseMana(float manaToUse)
@@ -59,16 +59,17 @@ namespace RPG.Attributes
 
         public object CaptureState()
         {
-            stuffToSave["mana"] = mana.value;
-            stuffToSave["regenRate"] = regenRate.value;
-            return stuffToSave;
+            return mana.value;
+            // stuffToSave["mana"] = mana.value;
+            // stuffToSave["regenRate"] = regenRate.value;
+            // return stuffToSave;
         }
 
         public void RestoreState(object state)
         {
-            Dictionary<string, float> stuffToLoad = (Dictionary<string, float>)state;
-            mana.value = stuffToLoad["mana"];
-            regenRate.value = stuffToLoad["regenRate"];
+            // Dictionary<string, float> stuffToLoad = (Dictionary<string, float>)state;
+            mana.value = (float)state;
+            // regenRate.value = stuffToLoad["regenRate"];
         }
     }
 }
