@@ -11,16 +11,16 @@ namespace RPG.Attributes
     {
         [SerializeField] float regenerationPercentage = 70;
         [SerializeField] UnityEvent<float> takeDamage;
-        
+
         public UnityEvent onDie;
 
         LazyValue<float> healthPoints;
 
-        bool isDead = false;
+        bool wasDeadLastFrame = false;
 
-        public bool IsDead
+        public bool IsDead()
         {
-            get { return isDead; }
+            return healthPoints.value <= 0;
         }
 
         void Awake()
@@ -50,22 +50,25 @@ namespace RPG.Attributes
 
         public void TakeDamage(GameObject instigator, float damage)
         {
-            print($"{gameObject.name} took damage: {damage}");
-
             healthPoints.value = Mathf.Max(healthPoints.value - damage, 0);
 
-            takeDamage.Invoke(damage);
-            if (healthPoints.value == 0)
+            if (IsDead())
             {
                 onDie.Invoke();
-                Die();
                 AwardExperience(instigator);
             }
+            else
+            {
+                takeDamage.Invoke(damage);
+            }
+
+            UpdateState();
         }
 
         public void Heal(float healthToRestore)
         {
             healthPoints.value = Mathf.Min(healthPoints.value + healthToRestore, GetMaxHitPoints());
+            UpdateState();
         }
 
         public float GetHealthPoints()
@@ -88,14 +91,22 @@ namespace RPG.Attributes
             return healthPoints.value / GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
-        void Die()
+        void UpdateState()
         {
-            if (isDead)
-                return;
+            var animator = GetComponent<Animator>();
 
-            isDead = true;
-            GetComponent<Animator>().SetTrigger("die");
-            GetComponent<ActionScheduler>().CancelCurrentAction();
+            if (!wasDeadLastFrame && IsDead())
+            {
+                animator.SetTrigger("die");
+                GetComponent<ActionScheduler>().CancelCurrentAction();
+            }
+
+            if (wasDeadLastFrame && !IsDead())
+            {
+                animator.Rebind();
+            }
+
+            wasDeadLastFrame = IsDead();
         }
 
         void AwardExperience(GameObject instigator)
@@ -123,10 +134,8 @@ namespace RPG.Attributes
         public void RestoreState(object state)
         {
             healthPoints.value = (float)state;
-            if (healthPoints.value == 0)
-            {
-                Die();
-            }
+
+            UpdateState();
         }
     }
 }

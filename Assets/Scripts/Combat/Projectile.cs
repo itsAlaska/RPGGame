@@ -27,7 +27,7 @@ namespace RPG.Combat
 
         void Update()
         {
-            if (target != null && isHoming && !target.IsDead)
+            if (target != null && isHoming && !target.IsDead())
                 transform.LookAt(GetAimLocation());
 
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
@@ -39,7 +39,7 @@ namespace RPG.Combat
             if (target != null && health != target)
                 return;
 
-            if (health == null || health.IsDead) return;
+            if (health == null || health.IsDead()) return;
             if (other.gameObject == instigator) return;
 
             health.TakeDamage(instigator, damage);
