@@ -5,6 +5,7 @@ using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace RPG.Control
 {
@@ -54,6 +55,7 @@ namespace RPG.Control
             player = GameObject.FindWithTag("Player");
 
             guardPosition = new LazyValue<Vector3>(GetGuardPosition);
+            guardPosition.ForceInit();
         }
 
         Vector3 GetGuardPosition()
@@ -181,6 +183,17 @@ namespace RPG.Control
         {
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(transform.position, chaseDistance);
+        }
+
+        public void Reset()
+        {
+            NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
+            navMeshAgent.Warp(guardPosition.value);
+            
+            timeSinceLastSawPlayer = Mathf.Infinity;
+            timeSinceArrivedAtWaypoint = Mathf.Infinity;
+            timeSinceAggravated = Mathf.Infinity;
+            currentWaypointIndex = 0;
         }
     }
 }
