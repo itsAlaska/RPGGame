@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using RPG.Saving;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace RPG.SceneManagement
 {
@@ -12,7 +13,8 @@ namespace RPG.SceneManagement
         private const string currentSaveKey = "currentSaveName";
         [SerializeField] float fadeInTime = 2f;
         [SerializeField] private float fadeOutTime = .2f;
-        [SerializeField] private int firstFieldBuildIndex = 1;
+        [SerializeField] private int firstLevelBuildIndex = 1;
+        [SerializeField] private int menuLevelBuildIndex = 0;
 
         public void ContinueGame()
         {
@@ -34,6 +36,11 @@ namespace RPG.SceneManagement
             ContinueGame();
         }
 
+        public void LoadMenu()
+        {
+            StartCoroutine(LoadMenuScene());
+        }
+
         private void SetCurrentSave(string saveFile)
         {
             PlayerPrefs.SetString(currentSaveKey, saveFile);
@@ -48,7 +55,15 @@ namespace RPG.SceneManagement
         {
             Fader fader = FindObjectOfType<Fader>();
             yield return fader.FadeOut(fadeOutTime);
-            yield return SceneManager.LoadSceneAsync(firstFieldBuildIndex);
+            yield return SceneManager.LoadSceneAsync(firstLevelBuildIndex);
+            yield return fader.FadeIn(fadeInTime);
+        }
+        
+        private IEnumerator LoadMenuScene()
+        {
+            Fader fader = FindObjectOfType<Fader>();
+            yield return fader.FadeOut(fadeOutTime);
+            yield return SceneManager.LoadSceneAsync(menuLevelBuildIndex);
             yield return fader.FadeIn(fadeInTime);
         }
 
@@ -109,5 +124,7 @@ namespace RPG.SceneManagement
         {
             return GetComponent<_mySavingSystem>().ListSaves();
         }
+
+        
     }
 }

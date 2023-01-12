@@ -48,7 +48,7 @@ namespace RPG.SceneManagement
                 canvasGroup.alpha = Mathf.MoveTowards(
                     canvasGroup.alpha,
                     target,
-                    Time.deltaTime / time
+                    Time.unscaledDeltaTime / time
                 );
 
                 yield return null;
