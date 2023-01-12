@@ -12,12 +12,14 @@ namespace RPG.UI
 
         private void OnEnable()
         {
+            _mySavingWrapper savingWrapper = FindObjectOfType<_mySavingWrapper>();
+            if (savingWrapper == null) return;
+            
             foreach (Transform child in contentRoot)
             {
                 Destroy(child.gameObject);
             }
 
-            _mySavingWrapper savingWrapper = FindObjectOfType<_mySavingWrapper>();
             foreach (string save in savingWrapper.ListSaves())
             {
                 GameObject buttonInstance = Instantiate(buttonPrefab, contentRoot);
