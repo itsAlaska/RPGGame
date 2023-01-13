@@ -76,6 +76,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 494349985, guid: 5d926a974958679468dfef0c622af9c7, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
     - target: {fileID: 994801041879802740, guid: 5d926a974958679468dfef0c622af9c7, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -169,6 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6cab1bcd702e594fa262c1cd3d205cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopName: 
+  sellingPercentage: 80
+  maximumBarterDiscount: 80
+  stockConfig: []
 --- !u!4 &7889831979940365229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3306555947678058778, guid: 5d926a974958679468dfef0c622af9c7, type: 3}

@@ -1,0 +1,376 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7839639036151157221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: befa1c5f-986a-49ed-89c6-5a21d686c1d0
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Yes... I am a traveller here, just making me way through this land...
+  children:
+  - eeb6d69a-e499-4dd3-bc58-42c60e01932f
+  rect:
+    serializedVersion: 2
+    x: 356
+    y: 82
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-7673235843114274684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 2bdc894b-1e17-4297-b77e-78edcfd0bef3
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Ehhh... nah, no thanks.
+  children:
+  - cf3be7ba-586c-48a7-9de7-4a9c4b6920cf
+  rect:
+    serializedVersion: 2
+    x: 2006
+    y: 190
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-7488831541916208265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: b5aeae01-c0f0-40fc-865e-9d969e0fc388
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: It's me! I'll open the gate for you but I need you to do something for me
+    first... The raccoon's have gotten just out of control lately! A family of seven
+    have just moved across the path there! Slay them all, and I will allow you to
+    pass.
+  children:
+  - 142a0049-52e8-4733-bad1-306a851052b4
+  - 2bdc894b-1e17-4297-b77e-78edcfd0bef3
+  rect:
+    serializedVersion: 2
+    x: 1666
+    y: 130
+    width: 200
+    height: 100
+  onEnterAction: SetName
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-6386155343721534065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 815431f9-0f01-4cf0-941a-e54035efad4e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Um, nope! I'm a local, don't you recognize me??
+  children:
+  - 4c26a857-4aee-49bf-9cf4-692fa084f773
+  rect:
+    serializedVersion: 2
+    x: 184
+    y: 334
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-3657525775065648135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 142a0049-52e8-4733-bad1-306a851052b4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: You got it!
+  children:
+  - e51369ca-5b79-4000-9de7-031f28be9c8d
+  rect:
+    serializedVersion: 2
+    x: 1983
+    y: 39
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveQuest
+  condition:
+    and: []
+--- !u!114 &-1081874537487747531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 8bf70047-edbe-469c-923e-fad09c3b3f5e
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: The Gaslighting Gatekeeper Girlboss would have to open it for you...
+  children:
+  - 118a0714-5018-4216-8616-dd8d352d9a07
+  rect:
+    serializedVersion: 2
+    x: 1158
+    y: 135
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea233725a296c05499cfe6f735ca1ea9, type: 3}
+  m_Name: First Quest (Raccoon Culling)
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 6077038011962539741}
+  - {fileID: -7839639036151157221}
+  - {fileID: -6386155343721534065}
+  - {fileID: 5815718934973801981}
+  - {fileID: 2261116959405985630}
+  - {fileID: -1081874537487747531}
+  - {fileID: 4838652532676602845}
+  - {fileID: -7488831541916208265}
+  - {fileID: -3657525775065648135}
+  - {fileID: -7673235843114274684}
+  - {fileID: 3958962294073541474}
+  - {fileID: 4971900383663147303}
+  - {fileID: 6569784674890432038}
+  newNodeOffset: {x: 200, y: 0}
+--- !u!114 &2261116959405985630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 5e0999a8-63f1-44af-a33d-0a05ceeb19ff
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I see that... How would one open said gate?
+  children:
+  - 8bf70047-edbe-469c-923e-fad09c3b3f5e
+  rect:
+    serializedVersion: 2
+    x: 913
+    y: 76
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &3958962294073541474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 4c26a857-4aee-49bf-9cf4-692fa084f773
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Hmm... I'm a particularly nosey individual, and I know for a fact I've never
+    seen a butt such as yours... Despite your attempts to deceive me, I see that
+    you are in fact new here!
+  children:
+  - eeb6d69a-e499-4dd3-bc58-42c60e01932f
+  rect:
+    serializedVersion: 2
+    x: 533
+    y: 361
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &4838652532676602845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 118a0714-5018-4216-8616-dd8d352d9a07
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: And where might she be??
+  children:
+  - b5aeae01-c0f0-40fc-865e-9d969e0fc388
+  rect:
+    serializedVersion: 2
+    x: 1401
+    y: 47
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &4971900383663147303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: e51369ca-5b79-4000-9de7-031f28be9c8d
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Great! Thanks!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2274
+    y: 41
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5815718934973801981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: eeb6d69a-e499-4dd3-bc58-42c60e01932f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Ah, very good. Well, There's no going back from the way you came, on account
+    of the fact that Mighty Mt. Butt exploded all over the road... And the way ahead
+    is blocked by the gate for this bridge...
+  children:
+  - 5e0999a8-63f1-44af-a33d-0a05ceeb19ff
+  rect:
+    serializedVersion: 2
+    x: 664
+    y: 132
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &6077038011962539741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: bd513af4-2f6f-452a-9491-a77cca1979fd
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Oh, well you're not a familiar face! You must be a traveller trapped here
+    after that avalanche that blocked the path...
+  children:
+  - befa1c5f-986a-49ed-89c6-5a21d686c1d0
+  - 815431f9-0f01-4cf0-941a-e54035efad4e
+  rect:
+    serializedVersion: 2
+    x: 85
+    y: 137
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &6569784674890432038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: cf3be7ba-586c-48a7-9de7-4a9c4b6920cf
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Fine, guess you'll jsut die on this tiny stretch of path... Are you sure?
+  children:
+  - b5aeae01-c0f0-40fc-865e-9d969e0fc388
+  rect:
+    serializedVersion: 2
+    x: 1880
+    y: 308
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []

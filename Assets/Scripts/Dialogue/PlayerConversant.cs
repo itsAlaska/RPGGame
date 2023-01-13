@@ -23,10 +23,14 @@ namespace RPG.Dialogue
         public void StartDialogue(AIConversant newConversant, Dialogue newDialogue)
         {
             currentConversant = newConversant;
+            Debug.Log($"currentConversant = {currentConversant}");
             currentDialogue = newDialogue;
+            Debug.Log($"currentDialogue = {currentDialogue}");
             currentNode = currentDialogue.GetRootNode();
+            Debug.Log($"currentNode.name = {currentNode.name}");
             TriggerEnterAction();
-            onConversationUpdated();
+            if (onConversationUpdated != null)
+                onConversationUpdated();
         }
 
         public void Quit()

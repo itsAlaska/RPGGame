@@ -10,6 +10,7 @@ namespace RPG.Dialogue
     {
         [SerializeField] private Dialogue dialogue = null;
         [SerializeField] private string conversantName;
+        [SerializeField] private string updatedName;
 
         public CursorType GetCursorType()
         {
@@ -33,6 +34,11 @@ namespace RPG.Dialogue
         public string GetName()
         {
             return conversantName;
+        }
+
+        public void SetName()
+        {
+            conversantName = updatedName;
         }
     }
 }

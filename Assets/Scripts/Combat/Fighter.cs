@@ -49,6 +49,8 @@ namespace RPG.Combat
 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Alpha9)) Debug.Log(currentWeaponConfig.name);
+            
             timeSinceLastAttack += Time.deltaTime;
 
             if (target == null || target.IsDead())

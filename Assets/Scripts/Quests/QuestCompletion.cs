@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using RPG.Attributes;
 using RPG.Inventories;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RPG.Quests
