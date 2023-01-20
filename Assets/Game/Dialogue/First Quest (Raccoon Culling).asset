@@ -100,8 +100,8 @@ MonoBehaviour:
   - 4c26a857-4aee-49bf-9cf4-692fa084f773
   rect:
     serializedVersion: 2
-    x: 184
-    y: 334
+    x: 288
+    y: 331
     width: 200
     height: 100
   onEnterAction: 
@@ -186,6 +186,8 @@ MonoBehaviour:
   - {fileID: 3958962294073541474}
   - {fileID: 4971900383663147303}
   - {fileID: 6569784674890432038}
+  - {fileID: 8054609136343569248}
+  - {fileID: 6228012965214913244}
   newNodeOffset: {x: 200, y: 0}
 --- !u!114 &2261116959405985630
 MonoBehaviour:
@@ -340,14 +342,55 @@ MonoBehaviour:
   - 815431f9-0f01-4cf0-941a-e54035efad4e
   rect:
     serializedVersion: 2
-    x: 85
+    x: 86
     y: 137
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
-    and: []
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - First Quest (Raccoon Culling)
+        negate: 1
+--- !u!114 &6228012965214913244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 17dbfc7e-c979-4003-9538-2391d304ea24
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Yes! Finally! Great, I'll open the gate for ya... Oh, and here's a li'l somethin'
+    extra ;).
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 66
+    y: 485
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - First Quest (Raccoon Culling)
+        negate: 0
+    - or:
+      - predicate: QuestCompleted
+        parameters:
+        - First Quest (Raccoon Culling)
+        negate: 0
 --- !u!114 &6569784674890432038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,3 +417,38 @@ MonoBehaviour:
   onExitAction: 
   condition:
     and: []
+--- !u!114 &8054609136343569248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e795f53871189447b4952e790198de7, type: 3}
+  m_Name: 68cbbec5-c23d-4a58-8b18-2eac27f56810
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Hmm... I think you're missing a raccoon or two...
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 72
+    y: 322
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - First Quest (Raccoon Culling)
+        negate: 0
+    - or:
+      - predicate: QuestCompleted
+        parameters:
+        - First Quest (Raccoon Culling)
+        negate: 1

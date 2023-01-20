@@ -15,16 +15,37 @@ MonoBehaviour:
   objectives:
   - reference: 1
     description: Raccoon slain
+    usesCondition: 0
+    completionCondition:
+      and: []
   - reference: 2
     description: Raccoon slain
+    usesCondition: 0
+    completionCondition:
+      and: []
   - reference: 3
     description: Raccoon slain
+    usesCondition: 0
+    completionCondition:
+      and: []
   - reference: 4
     description: Raccoon slain
+    usesCondition: 0
+    completionCondition:
+      and: []
   - reference: 5
     description: Raccoon slain
+    usesCondition: 0
+    completionCondition:
+      and: []
   - reference: 6
     description: Raccoon slain
+    usesCondition: 0
+    completionCondition:
+      and: []
   - reference: 7
     description: Raccoon slain
+    usesCondition: 0
+    completionCondition:
+      and: []
   rewards: []

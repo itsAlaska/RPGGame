@@ -4,6 +4,7 @@ using GameDevTV.Utils;
 using RPG.Inventories;
 using RPG.Saving;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 namespace RPG.Quests
 {
@@ -12,6 +13,13 @@ namespace RPG.Quests
         private List<QuestStatus> statuses = new List<QuestStatus>();
 
         public event Action onUpdate;
+
+        private void Update()
+        {
+            CompletedObjectivesByPredicate();
+        }
+
+       
 
         public void AddQuest(Quest quest)
         {
@@ -113,6 +121,28 @@ namespace RPG.Quests
             }
         }
 
+        private void CompletedObjectivesByPredicate()
+        {
+            foreach (QuestStatus status in statuses)
+            {
+                if (status.IsComplete()) continue;
+                var quest = status.GetQuest();
+                
+                foreach (var objective in quest.GetObjectives())
+                {
+                    if (status.IsObjectiveComplete(objective.reference)) continue;
+                    if (!objective.usesCondition) continue;
+                    if (objective.completionCondition.Check(GetComponents<IPredicateEvaluator>()))
+                    {
+                        CompleteObjective(quest, objective.reference);
+                    }
+                }
+
+                
+                
+            }
+        }
+        
         public object CaptureState()
         {
             List<object> state = new List<object>();
