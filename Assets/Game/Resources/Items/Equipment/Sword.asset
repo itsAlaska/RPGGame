@@ -18,7 +18,18 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: c38fcb09202f45346be5ebda367580f1, type: 3}
   pickup: {fileID: 1711996907944742749, guid: 4722c5c50fea0b3418957eea2028daa9, type: 3}
   stackable: 0
+  isQuestItem: 0
+  price: 0
+  category: 0
   allowedEquipLocation: 5
+  equipCondition:
+    and:
+    - or:
+      - predicate: MinimumTrait
+        parameters:
+        - Strength
+        - 3
+        negate: 0
   animatorOverride: {fileID: 22100000, guid: 19cd5a0e44907f04aad255061d89dd9b, type: 2}
   equippedPrefab: {fileID: 3843656598192775090, guid: 1db6ac36fbd19904ab0ca6e9da7573a1, type: 3}
   weaponDamage: 1
